@@ -1,0 +1,73 @@
+
+UCM Machine Learning Course
+Programming Assignment #1 Solution
+Driver Program:  p1_driver
+
+
+This program provides an example solution to Programming Assignment #1
+for the University of California, Merced course on Machine Learning
+(CSE 176/276) for Spring of 2013.  A detailed description of what this
+driver program is to do may be found in the specifcation document for
+this assignment.  In summary, this driver is intended to exercise the
+"PatternSet" class provided in "patterns.h" and "patterns.cc".  In
+order to do so, the driver performs the following operations:
+
+1.  Reads two integer parameters from the terminal:  the
+    dimensionality of input vectors and the number of patterns in the
+    pattern set. 
+
+2.  Creates a "pattern set" of the specified size, with no output
+    vectors in the patterns.
+
+3.  Reads a file name for a plain text file from the terminal.
+
+4.  Opens that file and reads a collection of input vectors, written
+    in plain text, from that file into the created "pattern set".
+
+5.  Reads a single vector, with dimensionality equal to that of the
+    vectors in the pattern set, from the terminal.  This vector will
+    be referred to as the "target vector". 
+
+6.  Produces a random reordering of the input vectors in the pattern
+    set. 
+
+7.  Writes, to the terminal, the input vectors in the newly determined
+    random order.
+
+8.  Writes, to the terminal, the input vectors in their originally
+    read order.
+
+9.  Writes, to the terminal, the input vectors in ascending order of
+    their Euclidean distance from the "target vector" (i.e., the
+    closest vector is first).
+
+10. Writes, to the terminal, the input vectors in ascending order of
+    their angular distance from the "target vector" (i.e., the closest
+    vector is first).
+
+11. Calculates the principal components of the input vectors, and
+    produces a new pattern set with each input vector replaced with
+    its projection onto the principal component axes, with the
+    components sorted in order (i.e., the first element of the
+    projected vectors should correspond to the first principal
+    component, and so on).
+
+12. Writes, to the terminal, the projected input vectors in the order
+    in which they were read. 
+
+The format of the plain text input file is described in the
+specification document for this exercise.
+
+In order to compile this program, simply enter the directory
+containing the program's source files and type the following commands:
+
+  $ ./configure
+  $ make
+
+This should produce an executable called "p1_driver".  In order to
+execute this program, simply invoke it by name at a shell prompt:
+
+  $ ./p1_driver
+
+The program will provide textual prompts for keyboard input.
+
