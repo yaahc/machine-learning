@@ -9,16 +9,16 @@ LDFLAGS=-L/usr/local/lib -lgsl -lgslcblas -lm
 
 
 
-all: pa1
+all: pa2
 
-pa1: pa1.o PatternSet.o
-	$(CC) $(LDFLAGS) pa1.o PatternSet.o -o pa1
+pa2: pa2.o PatternSet.o
+	$(CC) $(LDFLAGS) pa2.o PatternSet.o -o pa2
 
-pa1.o: pa1.cpp
-	$(CC) $(CFLAGS) pa1.cpp
+pa2.o: pa2.cpp
+	$(CC) $(CFLAGS) pa2.cpp
 
 PatternSet.o: PatternSet.cpp
 	$(CC) $(CFLAGS) PatternSet.cpp
 
 clean:
-	rm -rf *o pa1
+	rm -rf *o pa2

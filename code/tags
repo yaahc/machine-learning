@@ -6,72 +6,179 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 CC	makefile	/^CC=g++$/;"	m
 CFLAGS	makefile	/^CFLAGS=-c -Wall -pedantic -I\/usr\/include\/gsl$/;"	m
-GenerateAngularOrderingSequence	PatternSet.cpp	/^void PatternSet::GenerateAngularOrderingSequence(std::vector<double> & target) {$/;"	f	class:PatternSet
-GenerateEuclideanOrderingSequence	PatternSet.cpp	/^void PatternSet::GenerateEuclideanOrderingSequence(std::vector<double> & target) {$/;"	f	class:PatternSet
-GenerateOriginalOrderingSequence	PatternSet.cpp	/^void PatternSet::GenerateOriginalOrderingSequence() {$/;"	f	class:PatternSet
-GenerateRandomOrderingSequence	PatternSet.cpp	/^void PatternSet::GenerateRandomOrderingSequence() {$/;"	f	class:PatternSet
+GenerateAngularOrderingSequence	PatternSet.cpp	/^void PatternSet::GenerateAngularOrderingSequence(std::vector<double> & target) {$/;"	f	class:PatternSet	signature:(std::vector<double> & target)
+GenerateAngularOrderingSequence	PatternSet.h	/^        void GenerateAngularOrderingSequence(std::vector<double> & target);$/;"	p	class:PatternSet	access:public	signature:(std::vector<double> & target)
+GenerateEuclideanOrderingSequence	PatternSet.cpp	/^void PatternSet::GenerateEuclideanOrderingSequence(std::vector<double> & target) {$/;"	f	class:PatternSet	signature:(std::vector<double> & target)
+GenerateEuclideanOrderingSequence	PatternSet.h	/^        void GenerateEuclideanOrderingSequence(std::vector<double> & target);$/;"	p	class:PatternSet	access:public	signature:(std::vector<double> & target)
+GenerateOriginalOrderingSequence	PatternSet.cpp	/^void PatternSet::GenerateOriginalOrderingSequence() {$/;"	f	class:PatternSet	signature:()
+GenerateOriginalOrderingSequence	PatternSet.h	/^        void GenerateOriginalOrderingSequence();$/;"	p	class:PatternSet	access:public	signature:()
+GenerateRandomOrderingSequence	PatternSet.cpp	/^void PatternSet::GenerateRandomOrderingSequence() {$/;"	f	class:PatternSet	signature:()
+GenerateRandomOrderingSequence	PatternSet.h	/^        void GenerateRandomOrderingSequence();$/;"	p	class:PatternSet	access:public	signature:()
 LDFLAGS	makefile	/^LDFLAGS=-L\/usr\/local\/lib -lgsl -lgslcblas -lm$/;"	m
 PATTERNSET_H	PatternSet.h	2;"	d
 PATTERNS_UTILITIES_INCLUDED	PatternSetRef.h	10;"	d
-PatternSet	PatternSet.cpp	/^PatternSet::PatternSet(int numPatterns, int dimInput, int dimOutput) {$/;"	f	class:PatternSet
+PatternSet	PatternSet.cpp	/^PatternSet::PatternSet(int numPatterns, int dimInput, int dimOutput) {$/;"	f	class:PatternSet	signature:(int numPatterns, int dimInput, int dimOutput)
+PatternSet	PatternSet.h	/^        PatternSet(int numPatterns, int dimInput, int dimOutput);$/;"	p	class:PatternSet	access:public	signature:(int numPatterns, int dimInput, int dimOutput)
 PatternSet	PatternSet.h	/^class PatternSet {$/;"	c
-PatternSet	PatternSetRef.h	/^class PatternSet {$/;"	c
-PatternSetRef	PatternSetRef.cc	/^PatternSetRef::PatternSetRef(const PatternSetRef& pset) {$/;"	f	class:PatternSetRef
-PatternSetRef	PatternSetRef.cc	/^PatternSetRef::PatternSetRef(int num_pat, int num_inputs, int num_targets) {$/;"	f	class:PatternSetRef
-ProjectOntoPCA	PatternSet.cpp	/^PatternSet * PatternSet::ProjectOntoPCA() {$/;"	f	class:PatternSet
-ReadPatterns	PatternSet.cpp	/^void PatternSet::ReadPatterns(FILE * input) {$/;"	f	class:PatternSet
-SortPatternSetAngular	PatternSet.cpp	/^        SortPatternSetAngular(std::vector<int> & indexess, std::vector<double> & targett, gsl_matrix * dataa, int dimInputt) {$/;"	f	class:SortPatternSetAngular
+PatternSet::GenerateAngularOrderingSequence	PatternSet.cpp	/^void PatternSet::GenerateAngularOrderingSequence(std::vector<double> & target) {$/;"	f	class:PatternSet	signature:(std::vector<double> & target)
+PatternSet::GenerateAngularOrderingSequence	PatternSet.h	/^        void GenerateAngularOrderingSequence(std::vector<double> & target);$/;"	p	class:PatternSet	access:public	signature:(std::vector<double> & target)
+PatternSet::GenerateEuclideanOrderingSequence	PatternSet.cpp	/^void PatternSet::GenerateEuclideanOrderingSequence(std::vector<double> & target) {$/;"	f	class:PatternSet	signature:(std::vector<double> & target)
+PatternSet::GenerateEuclideanOrderingSequence	PatternSet.h	/^        void GenerateEuclideanOrderingSequence(std::vector<double> & target);$/;"	p	class:PatternSet	access:public	signature:(std::vector<double> & target)
+PatternSet::GenerateOriginalOrderingSequence	PatternSet.cpp	/^void PatternSet::GenerateOriginalOrderingSequence() {$/;"	f	class:PatternSet	signature:()
+PatternSet::GenerateOriginalOrderingSequence	PatternSet.h	/^        void GenerateOriginalOrderingSequence();$/;"	p	class:PatternSet	access:public	signature:()
+PatternSet::GenerateRandomOrderingSequence	PatternSet.cpp	/^void PatternSet::GenerateRandomOrderingSequence() {$/;"	f	class:PatternSet	signature:()
+PatternSet::GenerateRandomOrderingSequence	PatternSet.h	/^        void GenerateRandomOrderingSequence();$/;"	p	class:PatternSet	access:public	signature:()
+PatternSet::PatternSet	PatternSet.cpp	/^PatternSet::PatternSet(int numPatterns, int dimInput, int dimOutput) {$/;"	f	class:PatternSet	signature:(int numPatterns, int dimInput, int dimOutput)
+PatternSet::PatternSet	PatternSet.h	/^        PatternSet(int numPatterns, int dimInput, int dimOutput);$/;"	p	class:PatternSet	access:public	signature:(int numPatterns, int dimInput, int dimOutput)
+PatternSet::ProjectOntoPCA	PatternSet.cpp	/^PatternSet * PatternSet::ProjectOntoPCA() {$/;"	f	class:PatternSet	signature:()
+PatternSet::ProjectOntoPCA	PatternSet.h	/^        PatternSet * ProjectOntoPCA();$/;"	p	class:PatternSet	access:public	signature:()
+PatternSet::ReadPatterns	PatternSet.cpp	/^void PatternSet::ReadPatterns(FILE * input) {$/;"	f	class:PatternSet	signature:(FILE * input)
+PatternSet::ReadPatterns	PatternSet.h	/^        void ReadPatterns(FILE * input);$/;"	p	class:PatternSet	access:public	signature:(FILE * input)
+PatternSet::WritePatterns	PatternSet.cpp	/^void PatternSet::WritePatterns(FILE * output) {$/;"	f	class:PatternSet	signature:(FILE * output)
+PatternSet::WritePatterns	PatternSet.h	/^        void WritePatterns(FILE * output);$/;"	p	class:PatternSet	access:public	signature:(FILE * output)
+PatternSet::dimInput	PatternSet.h	/^        int dimInput;$/;"	m	class:PatternSet	access:private
+PatternSet::dimOutput	PatternSet.h	/^        int dimOutput; \/\/always 0 for this assignment$/;"	m	class:PatternSet	access:private
+PatternSet::inputVectors	PatternSet.h	/^        gsl_matrix * inputVectors;\/\/ = gsl_matrix_alloc(numPatterns, dimInput);$/;"	m	class:PatternSet	access:private
+PatternSet::numPatterns	PatternSet.h	/^        int numPatterns;$/;"	m	class:PatternSet	access:private
+PatternSet::orderSequence	PatternSet.h	/^        std::vector<int> orderSequence;$/;"	m	class:PatternSet	access:private
+PatternSet::outputVectors	PatternSet.h	/^        gsl_matrix * outputVectors;\/\/ = gsl_matrix_alloc(numPatterns, dimOutput);$/;"	m	class:PatternSet	access:private
+PatternSet::target	PatternSet.h	/^        std::vector<double> target;$/;"	m	class:PatternSet	access:private
+PatternSet::~PatternSet	PatternSet.cpp	/^PatternSet::~PatternSet() {$/;"	f	class:PatternSet	signature:()
+PatternSet::~PatternSet	PatternSet.h	/^        ~PatternSet();$/;"	p	class:PatternSet	access:public	signature:()
+PatternSetRef	PatternSetRef.cc	/^PatternSetRef::PatternSetRef(const PatternSetRef& pset) {$/;"	f	class:PatternSetRef	signature:(const PatternSetRef& pset)
+PatternSetRef	PatternSetRef.cc	/^PatternSetRef::PatternSetRef(int num_pat, int num_inputs, int num_targets) {$/;"	f	class:PatternSetRef	signature:(int num_pat, int num_inputs, int num_targets)
+PatternSetRef	PatternSetRef.h	/^        PatternSetRef(const PatternSetRef& pset);$/;"	p	class:PatternSetRef	access:public	signature:(const PatternSetRef& pset)
+PatternSetRef	PatternSetRef.h	/^        PatternSetRef(int num_pat = 0, int num_inputs = 0, int num_targets = 0);$/;"	p	class:PatternSetRef	access:public	signature:(int num_pat = 0, int num_inputs = 0, int num_targets = 0)
+PatternSetRef	PatternSetRef.h	/^class PatternSetRef {$/;"	c
+PatternSetRef::PatternSetRef	PatternSetRef.cc	/^PatternSetRef::PatternSetRef(const PatternSetRef& pset) {$/;"	f	class:PatternSetRef	signature:(const PatternSetRef& pset)
+PatternSetRef::PatternSetRef	PatternSetRef.cc	/^PatternSetRef::PatternSetRef(int num_pat, int num_inputs, int num_targets) {$/;"	f	class:PatternSetRef	signature:(int num_pat, int num_inputs, int num_targets)
+PatternSetRef::PatternSetRef	PatternSetRef.h	/^        PatternSetRef(const PatternSetRef& pset);$/;"	p	class:PatternSetRef	access:public	signature:(const PatternSetRef& pset)
+PatternSetRef::PatternSetRef	PatternSetRef.h	/^        PatternSetRef(int num_pat = 0, int num_inputs = 0, int num_targets = 0);$/;"	p	class:PatternSetRef	access:public	signature:(int num_pat = 0, int num_inputs = 0, int num_targets = 0)
+PatternSetRef::clear_permute_flag	PatternSetRef.h	/^        inline void clear_permute_flag() { permute = false; }$/;"	f	class:PatternSetRef	access:public	signature:()
+PatternSetRef::full_pattern	PatternSetRef.cc	/^gsl_vector* PatternSetRef::full_pattern(int i, gsl_vector* v) const {$/;"	f	class:PatternSetRef	signature:(int i, gsl_vector* v) const
+PatternSetRef::full_pattern	PatternSetRef.h	/^        gsl_vector* full_pattern(int i, gsl_vector* v) const;$/;"	p	class:PatternSetRef	access:public	signature:(int i, gsl_vector* v) const
+PatternSetRef::get_permute_flag	PatternSetRef.h	/^        inline bool get_permute_flag() const { return permute; }$/;"	f	class:PatternSetRef	access:public	signature:() const
+PatternSetRef::get_permuted_i	PatternSetRef.cc	/^int PatternSetRef::get_permuted_i(int t) const {$/;"	f	class:PatternSetRef	signature:(int t) const
+PatternSetRef::get_permuted_i	PatternSetRef.h	/^        int get_permuted_i(int t) const;$/;"	p	class:PatternSetRef	access:public	signature:(int t) const
+PatternSetRef::input_pattern	PatternSetRef.cc	/^gsl_vector* PatternSetRef::input_pattern(int i, gsl_vector* v) const {$/;"	f	class:PatternSetRef	signature:(int i, gsl_vector* v) const
+PatternSetRef::input_pattern	PatternSetRef.h	/^        gsl_vector* input_pattern(int i, gsl_vector* v) const;$/;"	p	class:PatternSetRef	access:public	signature:(int i, gsl_vector* v) const
+PatternSetRef::inputs_m	PatternSetRef.h	/^        gsl_matrix* inputs_m;     \/\/ the matrix of input vectors, one per row$/;"	m	class:PatternSetRef	access:private
+PatternSetRef::n_inputs	PatternSetRef.h	/^        int n_inputs;             \/\/ number of input values in each pattern$/;"	m	class:PatternSetRef	access:private
+PatternSetRef::n_patterns	PatternSetRef.h	/^        int n_patterns;           \/\/ number of patterns$/;"	m	class:PatternSetRef	access:private
+PatternSetRef::n_targets	PatternSetRef.h	/^        int n_targets;            \/\/ number of target values in each pattern$/;"	m	class:PatternSetRef	access:private
+PatternSetRef::number_of_inputs	PatternSetRef.h	/^        inline int number_of_inputs() const { return n_inputs; }$/;"	f	class:PatternSetRef	access:public	signature:() const
+PatternSetRef::number_of_patterns	PatternSetRef.h	/^        inline int number_of_patterns() const { return n_patterns; }$/;"	f	class:PatternSetRef	access:public	signature:() const
+PatternSetRef::number_of_targets	PatternSetRef.h	/^        inline int number_of_targets() const { return n_targets; }$/;"	f	class:PatternSetRef	access:public	signature:() const
+PatternSetRef::operator <<	PatternSetRef.h	/^        friend ostream& operator<<(ostream& ostr, const PatternSetRef& pset);$/;"	p	class:PatternSetRef	access:friend	signature:(ostream& ostr, const PatternSetRef& pset)
+PatternSetRef::operator =	PatternSetRef.cc	/^PatternSetRef& PatternSetRef::operator=(const PatternSetRef& pset) {$/;"	f	class:PatternSetRef	signature:(const PatternSetRef& pset)
+PatternSetRef::operator =	PatternSetRef.h	/^        PatternSetRef& operator=(const PatternSetRef& pset);$/;"	p	class:PatternSetRef	access:public	signature:(const PatternSetRef& pset)
+PatternSetRef::operator >>	PatternSetRef.h	/^        friend istream& operator>>(istream& istr, PatternSetRef& pset);$/;"	p	class:PatternSetRef	access:friend	signature:(istream& istr, PatternSetRef& pset)
+PatternSetRef::pattern_size	PatternSetRef.h	/^        inline int pattern_size() const { return (n_inputs + n_targets); }$/;"	f	class:PatternSetRef	access:public	signature:() const
+PatternSetRef::pca_project	PatternSetRef.cc	/^PatternSetRef& PatternSetRef::pca_project() {$/;"	f	class:PatternSetRef	signature:()
+PatternSetRef::pca_project	PatternSetRef.h	/^        PatternSetRef& pca_project();$/;"	p	class:PatternSetRef	access:public	signature:()
+PatternSetRef::permutation	PatternSetRef.h	/^        int* permutation;         \/\/ the pattern indices, randomly permuted$/;"	m	class:PatternSetRef	access:private
+PatternSetRef::permute	PatternSetRef.h	/^        bool permute;             \/\/ use the permutation sequence, if true$/;"	m	class:PatternSetRef	access:private
+PatternSetRef::permute_patterns	PatternSetRef.cc	/^bool PatternSetRef::permute_patterns() {$/;"	f	class:PatternSetRef	signature:()
+PatternSetRef::permute_patterns	PatternSetRef.h	/^        bool permute_patterns();$/;"	p	class:PatternSetRef	access:public	signature:()
+PatternSetRef::set_input_pattern	PatternSetRef.cc	/^int PatternSetRef::set_input_pattern(int i, gsl_vector* v) {$/;"	f	class:PatternSetRef	signature:(int i, gsl_vector* v)
+PatternSetRef::set_input_pattern	PatternSetRef.h	/^        int set_input_pattern(int i, gsl_vector* v);$/;"	p	class:PatternSetRef	access:public	signature:(int i, gsl_vector* v)
+PatternSetRef::set_permute_flag	PatternSetRef.h	/^        inline void set_permute_flag() { permute = true; }$/;"	f	class:PatternSetRef	access:public	signature:()
+PatternSetRef::set_target_pattern	PatternSetRef.cc	/^int PatternSetRef::set_target_pattern(int i, gsl_vector* v) {$/;"	f	class:PatternSetRef	signature:(int i, gsl_vector* v)
+PatternSetRef::set_target_pattern	PatternSetRef.h	/^        int set_target_pattern(int i, gsl_vector* v);$/;"	p	class:PatternSetRef	access:public	signature:(int i, gsl_vector* v)
+PatternSetRef::sort_angular	PatternSetRef.cc	/^bool PatternSetRef::sort_angular(gsl_vector* ref_v) {$/;"	f	class:PatternSetRef	signature:(gsl_vector* ref_v)
+PatternSetRef::sort_angular	PatternSetRef.h	/^        bool sort_angular(gsl_vector* ref_v);$/;"	p	class:PatternSetRef	access:public	signature:(gsl_vector* ref_v)
+PatternSetRef::sort_euclidean	PatternSetRef.cc	/^bool PatternSetRef::sort_euclidean(gsl_vector* ref_v) {$/;"	f	class:PatternSetRef	signature:(gsl_vector* ref_v)
+PatternSetRef::sort_euclidean	PatternSetRef.h	/^        bool sort_euclidean(gsl_vector* ref_v);$/;"	p	class:PatternSetRef	access:public	signature:(gsl_vector* ref_v)
+PatternSetRef::target_pattern	PatternSetRef.cc	/^gsl_vector* PatternSetRef::target_pattern(int i, gsl_vector* v) const {$/;"	f	class:PatternSetRef	signature:(int i, gsl_vector* v) const
+PatternSetRef::target_pattern	PatternSetRef.h	/^        gsl_vector* target_pattern(int i, gsl_vector* v) const;$/;"	p	class:PatternSetRef	access:public	signature:(int i, gsl_vector* v) const
+PatternSetRef::targets_m	PatternSetRef.h	/^        gsl_matrix* targets_m;    \/\/ the matrix of target vectors, one per row$/;"	m	class:PatternSetRef	access:private
+PatternSetRef::~PatternSetRef	PatternSetRef.cc	/^PatternSetRef::~PatternSetRef() {$/;"	f	class:PatternSetRef	signature:()
+PatternSetRef::~PatternSetRef	PatternSetRef.h	/^        ~PatternSetRef();$/;"	p	class:PatternSetRef	access:public	signature:()
+ProjectOntoPCA	PatternSet.cpp	/^PatternSet * PatternSet::ProjectOntoPCA() {$/;"	f	class:PatternSet	signature:()
+ProjectOntoPCA	PatternSet.h	/^        PatternSet * ProjectOntoPCA();$/;"	p	class:PatternSet	access:public	signature:()
+ReadPatterns	PatternSet.cpp	/^void PatternSet::ReadPatterns(FILE * input) {$/;"	f	class:PatternSet	signature:(FILE * input)
+ReadPatterns	PatternSet.h	/^        void ReadPatterns(FILE * input);$/;"	p	class:PatternSet	access:public	signature:(FILE * input)
+SortPatternSetAngular	PatternSet.cpp	/^        SortPatternSetAngular(std::vector<int> & indexess, std::vector<double> & targett, gsl_matrix * dataa, int dimInputt) {$/;"	f	class:SortPatternSetAngular	access:public	signature:(std::vector<int> & indexess, std::vector<double> & targett, gsl_matrix * dataa, int dimInputt)
 SortPatternSetAngular	PatternSet.cpp	/^class SortPatternSetAngular {$/;"	c	file:
-SortPatternSetEuclidean	PatternSet.cpp	/^        SortPatternSetEuclidean(std::vector<int> & indexess, std::vector<double> & targett, gsl_matrix * dataa, int dimInputt) {$/;"	f	class:SortPatternSetEuclidean
+SortPatternSetAngular::SortPatternSetAngular	PatternSet.cpp	/^        SortPatternSetAngular(std::vector<int> & indexess, std::vector<double> & targett, gsl_matrix * dataa, int dimInputt) {$/;"	f	class:SortPatternSetAngular	access:public	signature:(std::vector<int> & indexess, std::vector<double> & targett, gsl_matrix * dataa, int dimInputt)
+SortPatternSetAngular::data	PatternSet.cpp	/^        gsl_matrix * data;$/;"	m	class:SortPatternSetAngular	file:	access:private
+SortPatternSetAngular::dimInput	PatternSet.cpp	/^        int dimInput;$/;"	m	class:SortPatternSetAngular	file:	access:private
+SortPatternSetAngular::indexes	PatternSet.cpp	/^        std::vector<int> indexes;$/;"	m	class:SortPatternSetAngular	file:	access:private
+SortPatternSetAngular::operator ()	PatternSet.cpp	/^        bool operator()(int index1, int index2) {$/;"	f	class:SortPatternSetAngular	access:public	signature:(int index1, int index2)
+SortPatternSetAngular::target	PatternSet.cpp	/^        std::vector<double> target;$/;"	m	class:SortPatternSetAngular	file:	access:private
+SortPatternSetEuclidean	PatternSet.cpp	/^        SortPatternSetEuclidean(std::vector<int> & indexess, std::vector<double> & targett, gsl_matrix * dataa, int dimInputt) {$/;"	f	class:SortPatternSetEuclidean	access:public	signature:(std::vector<int> & indexess, std::vector<double> & targett, gsl_matrix * dataa, int dimInputt)
 SortPatternSetEuclidean	PatternSet.cpp	/^class SortPatternSetEuclidean {$/;"	c	file:
-WritePatterns	PatternSet.cpp	/^void PatternSet::WritePatterns(FILE * output) {$/;"	f	class:PatternSet
-clear_permute_flag	PatternSetRef.h	/^  inline void clear_permute_flag() { permute = false; }$/;"	f	class:PatternSet
-covariance_matrix	PatternSetRef.cc	/^gsl_matrix* covariance_matrix(gsl_matrix* cov_m, gsl_matrix* data_m, $/;"	f
-data	PatternSet.cpp	/^        gsl_matrix * data;$/;"	m	class:SortPatternSetAngular	file:
-data	PatternSet.cpp	/^        gsl_matrix * data;$/;"	m	class:SortPatternSetEuclidean	file:
-dimInput	PatternSet.cpp	/^        int dimInput;$/;"	m	class:SortPatternSetAngular	file:
-dimInput	PatternSet.cpp	/^        int dimInput;$/;"	m	class:SortPatternSetEuclidean	file:
-dimInput	PatternSet.h	/^        int dimInput;$/;"	m	class:PatternSet
-dimOutput	PatternSet.h	/^        int dimOutput; \/\/always 0 for this assignment$/;"	m	class:PatternSet
+SortPatternSetEuclidean::SortPatternSetEuclidean	PatternSet.cpp	/^        SortPatternSetEuclidean(std::vector<int> & indexess, std::vector<double> & targett, gsl_matrix * dataa, int dimInputt) {$/;"	f	class:SortPatternSetEuclidean	access:public	signature:(std::vector<int> & indexess, std::vector<double> & targett, gsl_matrix * dataa, int dimInputt)
+SortPatternSetEuclidean::data	PatternSet.cpp	/^        gsl_matrix * data;$/;"	m	class:SortPatternSetEuclidean	file:	access:private
+SortPatternSetEuclidean::dimInput	PatternSet.cpp	/^        int dimInput;$/;"	m	class:SortPatternSetEuclidean	file:	access:private
+SortPatternSetEuclidean::indexes	PatternSet.cpp	/^        std::vector<int> indexes;$/;"	m	class:SortPatternSetEuclidean	file:	access:private
+SortPatternSetEuclidean::operator ()	PatternSet.cpp	/^        bool operator()(int index1, int index2) {$/;"	f	class:SortPatternSetEuclidean	access:public	signature:(int index1, int index2)
+SortPatternSetEuclidean::target	PatternSet.cpp	/^        std::vector<double> target;$/;"	m	class:SortPatternSetEuclidean	file:	access:private
+WritePatterns	PatternSet.cpp	/^void PatternSet::WritePatterns(FILE * output) {$/;"	f	class:PatternSet	signature:(FILE * output)
+WritePatterns	PatternSet.h	/^        void WritePatterns(FILE * output);$/;"	p	class:PatternSet	access:public	signature:(FILE * output)
+clear_permute_flag	PatternSetRef.h	/^        inline void clear_permute_flag() { permute = false; }$/;"	f	class:PatternSetRef	access:public	signature:()
+covariance_matrix	PatternSetRef.cc	/^gsl_matrix* covariance_matrix(gsl_matrix* cov_m, gsl_matrix* data_m, $/;"	f	signature:(gsl_matrix* cov_m, gsl_matrix* data_m, gsl_vector* means_v)
+data	PatternSet.cpp	/^        gsl_matrix * data;$/;"	m	class:SortPatternSetAngular	file:	access:private
+data	PatternSet.cpp	/^        gsl_matrix * data;$/;"	m	class:SortPatternSetEuclidean	file:	access:private
+dimInput	PatternSet.cpp	/^        int dimInput;$/;"	m	class:SortPatternSetAngular	file:	access:private
+dimInput	PatternSet.cpp	/^        int dimInput;$/;"	m	class:SortPatternSetEuclidean	file:	access:private
+dimInput	PatternSet.h	/^        int dimInput;$/;"	m	class:PatternSet	access:private
+dimOutput	PatternSet.h	/^        int dimOutput; \/\/always 0 for this assignment$/;"	m	class:PatternSet	access:private
 dout	PatternSet.h	5;"	d
 dout	PatternSet.h	7;"	d
-full_pattern	PatternSetRef.cc	/^gsl_vector* PatternSetRef::full_pattern(int i, gsl_vector* v) const {$/;"	f	class:PatternSetRef
-get_permute_flag	PatternSetRef.h	/^  inline bool get_permute_flag() const { return permute; }$/;"	f	class:PatternSet
-get_permuted_i	PatternSetRef.cc	/^int PatternSetRef::get_permuted_i(int t) const {$/;"	f	class:PatternSetRef
-indexes	PatternSet.cpp	/^        std::vector<int> indexes;$/;"	m	class:SortPatternSetAngular	file:
-indexes	PatternSet.cpp	/^        std::vector<int> indexes;$/;"	m	class:SortPatternSetEuclidean	file:
-inputVectors	PatternSet.h	/^        gsl_matrix * inputVectors;\/\/ = gsl_matrix_alloc(numPatterns, dimInput);$/;"	m	class:PatternSet
-input_pattern	PatternSetRef.cc	/^gsl_vector* PatternSetRef::input_pattern(int i, gsl_vector* v) const {$/;"	f	class:PatternSetRef
-inputs_m	PatternSetRef.h	/^  gsl_matrix* inputs_m;     \/\/ the matrix of input vectors, one per row$/;"	m	class:PatternSet
-main	pa1.cpp	/^int main(int argc, char* argv[]) {$/;"	f
-n_inputs	PatternSetRef.h	/^  int n_inputs;             \/\/ number of input values in each pattern$/;"	m	class:PatternSet
-n_patterns	PatternSetRef.h	/^  int n_patterns;           \/\/ number of patterns$/;"	m	class:PatternSet
-n_targets	PatternSetRef.h	/^  int n_targets;            \/\/ number of target values in each pattern$/;"	m	class:PatternSet
-numPatterns	PatternSet.h	/^        int numPatterns;$/;"	m	class:PatternSet
-number_of_inputs	PatternSetRef.h	/^  inline int number_of_inputs() const { return n_inputs; }$/;"	f	class:PatternSet
-number_of_patterns	PatternSetRef.h	/^  inline int number_of_patterns() const { return n_patterns; }$/;"	f	class:PatternSet
-number_of_targets	PatternSetRef.h	/^  inline int number_of_targets() const { return n_targets; }$/;"	f	class:PatternSet
-operator ()	PatternSet.cpp	/^        bool operator()(int index1, int index2) {$/;"	f	class:SortPatternSetAngular
-operator ()	PatternSet.cpp	/^        bool operator()(int index1, int index2) {$/;"	f	class:SortPatternSetEuclidean
-operator <<	PatternSetRef.cc	/^ostream& operator<<(ostream& ostr, const PatternSetRef& pset) {$/;"	f
-operator =	PatternSetRef.cc	/^PatternSetRef& PatternSetRef::operator=(const PatternSetRef& pset) {$/;"	f	class:PatternSetRef
-operator >>	PatternSetRef.cc	/^istream& operator>>(istream& istr, PatternSetRef& pset) {$/;"	f
-orderSequence	PatternSet.h	/^        std::vector<int> orderSequence;$/;"	m	class:PatternSet
-outputVectors	PatternSet.h	/^        gsl_matrix * outputVectors;\/\/ = gsl_matrix_alloc(numPatterns, dimOutput);$/;"	m	class:PatternSet
-pattern_size	PatternSetRef.h	/^  inline int pattern_size() const { return (n_inputs + n_targets); }$/;"	f	class:PatternSet
-pca_project	PatternSetRef.cc	/^PatternSetRef& PatternSetRef::pca_project() {$/;"	f	class:PatternSetRef
-permutation	PatternSetRef.h	/^  int* permutation;         \/\/ the pattern indices, randomly permuted$/;"	m	class:PatternSet
-permute	PatternSetRef.h	/^  bool permute;             \/\/ use the permutation sequence, if true$/;"	m	class:PatternSet
-permute_patterns	PatternSetRef.cc	/^bool PatternSetRef::permute_patterns() {$/;"	f	class:PatternSetRef
-set_input_pattern	PatternSetRef.cc	/^int PatternSetRef::set_input_pattern(int i, gsl_vector* v) {$/;"	f	class:PatternSetRef
-set_permute_flag	PatternSetRef.h	/^  inline void set_permute_flag() { permute = true; }$/;"	f	class:PatternSet
-set_target_pattern	PatternSetRef.cc	/^int PatternSetRef::set_target_pattern(int i, gsl_vector* v) {$/;"	f	class:PatternSetRef
-sort_angular	PatternSetRef.cc	/^bool PatternSetRef::sort_angular(gsl_vector* ref_v) {$/;"	f	class:PatternSetRef
-sort_euclidean	PatternSetRef.cc	/^bool PatternSetRef::sort_euclidean(gsl_vector* ref_v) {$/;"	f	class:PatternSetRef
-target	PatternSet.cpp	/^        std::vector<double> target;$/;"	m	class:SortPatternSetAngular	file:
-target	PatternSet.cpp	/^        std::vector<double> target;$/;"	m	class:SortPatternSetEuclidean	file:
-target	PatternSet.h	/^        std::vector<double> target;$/;"	m	class:PatternSet
-target_pattern	PatternSetRef.cc	/^gsl_vector* PatternSetRef::target_pattern(int i, gsl_vector* v) const {$/;"	f	class:PatternSetRef
-targets_m	PatternSetRef.h	/^  gsl_matrix* targets_m;    \/\/ the matrix of target vectors, one per row$/;"	m	class:PatternSet
-~PatternSet	PatternSet.cpp	/^PatternSet::~PatternSet() {$/;"	f	class:PatternSet
-~PatternSetRef	PatternSetRef.cc	/^PatternSetRef::~PatternSetRef() {$/;"	f	class:PatternSetRef
+full_pattern	PatternSetRef.cc	/^gsl_vector* PatternSetRef::full_pattern(int i, gsl_vector* v) const {$/;"	f	class:PatternSetRef	signature:(int i, gsl_vector* v) const
+full_pattern	PatternSetRef.h	/^        gsl_vector* full_pattern(int i, gsl_vector* v) const;$/;"	p	class:PatternSetRef	access:public	signature:(int i, gsl_vector* v) const
+get_permute_flag	PatternSetRef.h	/^        inline bool get_permute_flag() const { return permute; }$/;"	f	class:PatternSetRef	access:public	signature:() const
+get_permuted_i	PatternSetRef.cc	/^int PatternSetRef::get_permuted_i(int t) const {$/;"	f	class:PatternSetRef	signature:(int t) const
+get_permuted_i	PatternSetRef.h	/^        int get_permuted_i(int t) const;$/;"	p	class:PatternSetRef	access:public	signature:(int t) const
+indexes	PatternSet.cpp	/^        std::vector<int> indexes;$/;"	m	class:SortPatternSetAngular	file:	access:private
+indexes	PatternSet.cpp	/^        std::vector<int> indexes;$/;"	m	class:SortPatternSetEuclidean	file:	access:private
+inputVectors	PatternSet.h	/^        gsl_matrix * inputVectors;\/\/ = gsl_matrix_alloc(numPatterns, dimInput);$/;"	m	class:PatternSet	access:private
+input_pattern	PatternSetRef.cc	/^gsl_vector* PatternSetRef::input_pattern(int i, gsl_vector* v) const {$/;"	f	class:PatternSetRef	signature:(int i, gsl_vector* v) const
+input_pattern	PatternSetRef.h	/^        gsl_vector* input_pattern(int i, gsl_vector* v) const;$/;"	p	class:PatternSetRef	access:public	signature:(int i, gsl_vector* v) const
+inputs_m	PatternSetRef.h	/^        gsl_matrix* inputs_m;     \/\/ the matrix of input vectors, one per row$/;"	m	class:PatternSetRef	access:private
+main	pa1.cpp	/^int main(int argc, char* argv[]) {$/;"	f	signature:(int argc, char* argv[])
+main	pa2.cpp	/^int main(int argc, char* argv[]) {$/;"	f	signature:(int argc, char* argv[])
+n_inputs	PatternSetRef.h	/^        int n_inputs;             \/\/ number of input values in each pattern$/;"	m	class:PatternSetRef	access:private
+n_patterns	PatternSetRef.h	/^        int n_patterns;           \/\/ number of patterns$/;"	m	class:PatternSetRef	access:private
+n_targets	PatternSetRef.h	/^        int n_targets;            \/\/ number of target values in each pattern$/;"	m	class:PatternSetRef	access:private
+numPatterns	PatternSet.h	/^        int numPatterns;$/;"	m	class:PatternSet	access:private
+number_of_inputs	PatternSetRef.h	/^        inline int number_of_inputs() const { return n_inputs; }$/;"	f	class:PatternSetRef	access:public	signature:() const
+number_of_patterns	PatternSetRef.h	/^        inline int number_of_patterns() const { return n_patterns; }$/;"	f	class:PatternSetRef	access:public	signature:() const
+number_of_targets	PatternSetRef.h	/^        inline int number_of_targets() const { return n_targets; }$/;"	f	class:PatternSetRef	access:public	signature:() const
+operator ()	PatternSet.cpp	/^        bool operator()(int index1, int index2) {$/;"	f	class:SortPatternSetAngular	access:public	signature:(int index1, int index2)
+operator ()	PatternSet.cpp	/^        bool operator()(int index1, int index2) {$/;"	f	class:SortPatternSetEuclidean	access:public	signature:(int index1, int index2)
+operator <<	PatternSetRef.cc	/^ostream& operator<<(ostream& ostr, const PatternSetRef& pset) {$/;"	f	signature:(ostream& ostr, const PatternSetRef& pset)
+operator <<	PatternSetRef.h	/^        friend ostream& operator<<(ostream& ostr, const PatternSetRef& pset);$/;"	p	class:PatternSetRef	access:friend	signature:(ostream& ostr, const PatternSetRef& pset)
+operator =	PatternSetRef.cc	/^PatternSetRef& PatternSetRef::operator=(const PatternSetRef& pset) {$/;"	f	class:PatternSetRef	signature:(const PatternSetRef& pset)
+operator =	PatternSetRef.h	/^        PatternSetRef& operator=(const PatternSetRef& pset);$/;"	p	class:PatternSetRef	access:public	signature:(const PatternSetRef& pset)
+operator >>	PatternSetRef.cc	/^istream& operator>>(istream& istr, PatternSetRef& pset) {$/;"	f	signature:(istream& istr, PatternSetRef& pset)
+operator >>	PatternSetRef.h	/^        friend istream& operator>>(istream& istr, PatternSetRef& pset);$/;"	p	class:PatternSetRef	access:friend	signature:(istream& istr, PatternSetRef& pset)
+orderSequence	PatternSet.h	/^        std::vector<int> orderSequence;$/;"	m	class:PatternSet	access:private
+outputVectors	PatternSet.h	/^        gsl_matrix * outputVectors;\/\/ = gsl_matrix_alloc(numPatterns, dimOutput);$/;"	m	class:PatternSet	access:private
+pattern_size	PatternSetRef.h	/^        inline int pattern_size() const { return (n_inputs + n_targets); }$/;"	f	class:PatternSetRef	access:public	signature:() const
+pca_project	PatternSetRef.cc	/^PatternSetRef& PatternSetRef::pca_project() {$/;"	f	class:PatternSetRef	signature:()
+pca_project	PatternSetRef.h	/^        PatternSetRef& pca_project();$/;"	p	class:PatternSetRef	access:public	signature:()
+permutation	PatternSetRef.h	/^        int* permutation;         \/\/ the pattern indices, randomly permuted$/;"	m	class:PatternSetRef	access:private
+permute	PatternSetRef.h	/^        bool permute;             \/\/ use the permutation sequence, if true$/;"	m	class:PatternSetRef	access:private
+permute_patterns	PatternSetRef.cc	/^bool PatternSetRef::permute_patterns() {$/;"	f	class:PatternSetRef	signature:()
+permute_patterns	PatternSetRef.h	/^        bool permute_patterns();$/;"	p	class:PatternSetRef	access:public	signature:()
+set_input_pattern	PatternSetRef.cc	/^int PatternSetRef::set_input_pattern(int i, gsl_vector* v) {$/;"	f	class:PatternSetRef	signature:(int i, gsl_vector* v)
+set_input_pattern	PatternSetRef.h	/^        int set_input_pattern(int i, gsl_vector* v);$/;"	p	class:PatternSetRef	access:public	signature:(int i, gsl_vector* v)
+set_permute_flag	PatternSetRef.h	/^        inline void set_permute_flag() { permute = true; }$/;"	f	class:PatternSetRef	access:public	signature:()
+set_target_pattern	PatternSetRef.cc	/^int PatternSetRef::set_target_pattern(int i, gsl_vector* v) {$/;"	f	class:PatternSetRef	signature:(int i, gsl_vector* v)
+set_target_pattern	PatternSetRef.h	/^        int set_target_pattern(int i, gsl_vector* v);$/;"	p	class:PatternSetRef	access:public	signature:(int i, gsl_vector* v)
+sort_angular	PatternSetRef.cc	/^bool PatternSetRef::sort_angular(gsl_vector* ref_v) {$/;"	f	class:PatternSetRef	signature:(gsl_vector* ref_v)
+sort_angular	PatternSetRef.h	/^        bool sort_angular(gsl_vector* ref_v);$/;"	p	class:PatternSetRef	access:public	signature:(gsl_vector* ref_v)
+sort_euclidean	PatternSetRef.cc	/^bool PatternSetRef::sort_euclidean(gsl_vector* ref_v) {$/;"	f	class:PatternSetRef	signature:(gsl_vector* ref_v)
+sort_euclidean	PatternSetRef.h	/^        bool sort_euclidean(gsl_vector* ref_v);$/;"	p	class:PatternSetRef	access:public	signature:(gsl_vector* ref_v)
+target	PatternSet.cpp	/^        std::vector<double> target;$/;"	m	class:SortPatternSetAngular	file:	access:private
+target	PatternSet.cpp	/^        std::vector<double> target;$/;"	m	class:SortPatternSetEuclidean	file:	access:private
+target	PatternSet.h	/^        std::vector<double> target;$/;"	m	class:PatternSet	access:private
+target_pattern	PatternSetRef.cc	/^gsl_vector* PatternSetRef::target_pattern(int i, gsl_vector* v) const {$/;"	f	class:PatternSetRef	signature:(int i, gsl_vector* v) const
+target_pattern	PatternSetRef.h	/^        gsl_vector* target_pattern(int i, gsl_vector* v) const;$/;"	p	class:PatternSetRef	access:public	signature:(int i, gsl_vector* v) const
+targets_m	PatternSetRef.h	/^        gsl_matrix* targets_m;    \/\/ the matrix of target vectors, one per row$/;"	m	class:PatternSetRef	access:private
+~PatternSet	PatternSet.cpp	/^PatternSet::~PatternSet() {$/;"	f	class:PatternSet	signature:()
+~PatternSet	PatternSet.h	/^        ~PatternSet();$/;"	p	class:PatternSet	access:public	signature:()
+~PatternSetRef	PatternSetRef.cc	/^PatternSetRef::~PatternSetRef() {$/;"	f	class:PatternSetRef	signature:()
+~PatternSetRef	PatternSetRef.h	/^        ~PatternSetRef();$/;"	p	class:PatternSetRef	access:public	signature:()
