@@ -106,6 +106,7 @@ int main(int argc, char** argv) {
     gsl_vector* neighbor_i = gsl_vector_alloc(output_dimensionality);
     pset->set_permute_flag();
 
+    double totalSSE = 0;
     for(int i = 0; i < num_testing; i++) {
         //input vector
         if(!testingSet->input_pattern(i, input_vector)) {
@@ -132,15 +133,13 @@ int main(int argc, char** argv) {
         for(int j = 0; j < k; j++) {
             pset->target_pattern(pset->get_permuted_i(j), neighbor_i);
 
+            //scale the vector if we're doing weighted mean
             if(output_method[0] == 'W') {
                 double weight = pow(pset->get_distance(pset->get_permuted_i(j)), 2);
-                cout << weight << endl;
-                if(weight != 0 && !special_case) {
+                if(weight != 0 && !special_case) { //as soon as we hit a "special_case" never consider non 0 weighted vectors
                     weight_sum += 1.0/weight;
-                    cout << "weight:" << 1.0/weight << endl;
                     gsl_vector_scale(neighbor_i, 1.0/weight);
                 } else if(weight == 0) { 
-                    cout << "weight = 0" << endl;
                     if(!special_case) {
                         special_case = true;
                         gsl_vector_scale(output, 0.0);
@@ -152,15 +151,13 @@ int main(int argc, char** argv) {
             if(!special_case)
                 gsl_vector_add(output, neighbor_i);
         }
+        //scale the output vector down by the number of vectors used (or sum of weight)
         if(special_case) {
             gsl_vector_scale(output, 1.0/k_special);
-            cout << "k_special:" << k_special << endl;
         } else if(output_method[0] == 'U' || output_method[0] == 'M') {
             gsl_vector_scale(output, 1.0/k);
-            cout << "k:" << k << endl;
         } else if(output_method[0] == 'W') {
             gsl_vector_scale(output, 1.0/weight_sum);
-            cout << "weight_sum:" << weight_sum << endl;
         }
 
         //calculate Sum Squared Error
@@ -168,7 +165,7 @@ int main(int argc, char** argv) {
         testingSet->target_pattern(i, target_vector);
         for(int j = 0; j < output_dimensionality; j++)
             sse += pow(gsl_vector_get(output, j) - gsl_vector_get(target_vector, j), 2.0);
-
+        totalSSE += sse;
         //Output to the file
         for(int j = 0; j < input_dimensionality; j++)
             cout << gsl_vector_get(input_vector, j) << " ";
@@ -178,6 +175,7 @@ int main(int argc, char** argv) {
             cout << gsl_vector_get(target_vector, j) << " ";
         cout << sse << endl;
     }
+    cout << totalSSE << endl;
     /* // Read the target vector ... */
     /* target_vector = gsl_vector_alloc(input_dimensionality); */
     /* cout << "Enter the target vector, with elements separated by whitespace:" */
