@@ -398,7 +398,9 @@ bool PatternSet::permute_patterns() {
 
 bool PatternSet::sort_euclidean(gsl_vector* ref_v) {
     if (permutation) {
-        double* distances = new double[n_patterns];
+        if(distances)
+            delete[] distances;
+        distances = new double[n_patterns];
         size_t* perm = new size_t[n_patterns];
         gsl_vector* diff_v = gsl_vector_alloc(n_inputs);
 
@@ -412,7 +414,6 @@ bool PatternSet::sort_euclidean(gsl_vector* ref_v) {
             for (int i = 0; i < n_patterns; i++)
                 permutation[i] = (int) perm[i];
             // deallocate storage ...
-            delete [] distances;
             delete [] perm;
             gsl_vector_free(diff_v);
             // return success ...
@@ -440,7 +441,9 @@ bool PatternSet::sort_euclidean(gsl_vector* ref_v) {
 
 bool PatternSet::sort_angular(gsl_vector* ref_v) {
     if (permutation) {
-        double* distances = new double[n_patterns];
+        if(distances)
+            delete[] distances;
+        distances = new double[n_patterns];
         size_t* perm = new size_t[n_patterns];
         double dot_product;
         double pattern_vector_length;
@@ -469,7 +472,6 @@ bool PatternSet::sort_angular(gsl_vector* ref_v) {
             for (int i = 0; i < n_patterns; i++)
                 permutation[i] = perm[n_patterns - i - 1];
             // deallocate storage ...
-            delete [] distances;
             delete [] perm;
             // return success ...
             return (true);

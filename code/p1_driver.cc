@@ -126,17 +126,49 @@ int main(int argc, char** argv) {
         //choose the K-nearest neighbors
         //create classification based on output method
         gsl_vector_scale(output, 0.0);
+        double weight_sum = 0;
+        bool special_case = false;
+        int k_special = 0;
         for(int j = 0; j < k; j++) {
             pset->target_pattern(pset->get_permuted_i(j), neighbor_i);
-            gsl_vector_add(output, neighbor_i);
+
+            if(output_method[0] == 'W') {
+                double weight = pow(pset->get_distance(pset->get_permuted_i(j)), 2);
+                cout << weight << endl;
+                if(weight != 0 && !special_case) {
+                    weight_sum += 1.0/weight;
+                    cout << "weight:" << 1.0/weight << endl;
+                    gsl_vector_scale(neighbor_i, 1.0/weight);
+                } else if(weight == 0) { 
+                    cout << "weight = 0" << endl;
+                    if(!special_case) {
+                        special_case = true;
+                        gsl_vector_scale(output, 0.0);
+                    }
+                    k_special++;
+                    gsl_vector_add(output, neighbor_i);
+                }
+            }
+            if(!special_case)
+                gsl_vector_add(output, neighbor_i);
         }
-        gsl_vector_scale(output, 1.0/k);
-        testingSet->target_pattern(i, target_vector);
+        if(special_case) {
+            gsl_vector_scale(output, 1.0/k_special);
+            cout << "k_special:" << k_special << endl;
+        } else if(output_method[0] == 'U' || output_method[0] == 'M') {
+            gsl_vector_scale(output, 1.0/k);
+            cout << "k:" << k << endl;
+        } else if(output_method[0] == 'W') {
+            gsl_vector_scale(output, 1.0/weight_sum);
+            cout << "weight_sum:" << weight_sum << endl;
+        }
+
         //calculate Sum Squared Error
         double sse = 0;
-        for(int j = 0; j < output_dimensionality; j++) {
+        testingSet->target_pattern(i, target_vector);
+        for(int j = 0; j < output_dimensionality; j++)
             sse += pow(gsl_vector_get(output, j) - gsl_vector_get(target_vector, j), 2.0);
-        }
+
         //Output to the file
         for(int j = 0; j < input_dimensionality; j++)
             cout << gsl_vector_get(input_vector, j) << " ";
