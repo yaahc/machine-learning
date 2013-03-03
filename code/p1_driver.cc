@@ -12,6 +12,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cmath>
 
 #include <gsl/gsl_vector.h>
 
@@ -46,7 +47,6 @@ int main(int argc, char** argv) {
     string pattern_file_name;
     ifstream input_file_str;
     ifstream config_file_str;
-    gsl_vector* target_vector;
 
     // Check number of arguments ...
     if (argc != 2)
@@ -84,7 +84,68 @@ int main(int argc, char** argv) {
     // Close the pattern set file ...
     if (input_file_str.is_open())
         input_file_str.close();
-    cout << (*pset); 
+    /* cout << (*pset); */ 
+
+    //clasify the training set... and I wonder
+    PatternSet* testingSet = new PatternSet(num_testing, input_dimensionality, output_dimensionality);
+    cout << num_testing << endl;
+    input_file_str.open(trim(testing_file).c_str());
+    if(!input_file_str.is_open()) {
+        cerr << argv[0] << " error: cannot open specified pattern file." << endl;
+        return (-1);
+    }
+    //read the patterns
+    input_file_str >> (*testingSet);
+    //close the pattern set file
+    if(input_file_str.is_open())
+        input_file_str.close();
+
+    gsl_vector* input_vector = gsl_vector_alloc(input_dimensionality);
+    gsl_vector* output = gsl_vector_alloc(output_dimensionality);
+    gsl_vector* target_vector = gsl_vector_alloc(output_dimensionality);
+    gsl_vector* neighbor_i = gsl_vector_alloc(output_dimensionality);
+    pset->set_permute_flag();
+
+    for(int i = 0; i < num_testing; i++) {
+        //input vector
+        if(!testingSet->input_pattern(i, input_vector)) {
+            cerr << argv[0] << " error: issue copying input vector\n";
+        }
+
+        //order the sets by distance metric
+        if(distance_metric[0] == 'E') {
+            //euclidean distance
+            pset->sort_euclidean(input_vector);
+        } else if(distance_metric[0] == 'A') {
+            //angular distance
+            pset->sort_angular(input_vector);
+        } else {
+            cerr << "wth\n";
+        }
+
+        //choose the K-nearest neighbors
+        //create classification based on output method
+        gsl_vector_scale(output, 0.0);
+        for(int j = 0; j < k; j++) {
+            pset->target_pattern(pset->get_permuted_i(j), neighbor_i);
+            gsl_vector_add(output, neighbor_i);
+        }
+        gsl_vector_scale(output, 1.0/k);
+        testingSet->target_pattern(i, target_vector);
+        //calculate Sum Squared Error
+        double sse = 0;
+        for(int j = 0; j < output_dimensionality; j++) {
+            sse += pow(gsl_vector_get(output, j) - gsl_vector_get(target_vector, j), 2.0);
+        }
+        //Output to the file
+        for(int j = 0; j < input_dimensionality; j++)
+            cout << gsl_vector_get(input_vector, j) << " ";
+        for(int j = 0; j < output_dimensionality; j++)
+            cout << gsl_vector_get(output, j) << " ";
+        for(int j = 0; j < output_dimensionality; j++)
+            cout << gsl_vector_get(target_vector, j) << " ";
+        cout << sse << endl;
+    }
     /* // Read the target vector ... */
     /* target_vector = gsl_vector_alloc(input_dimensionality); */
     /* cout << "Enter the target vector, with elements separated by whitespace:" */

@@ -74,7 +74,13 @@ p1_driver.o: p1_driver.cc /usr/include/c++/4.4/iostream \
  /usr/include/bits/stdio.h /usr/include/bits/stdio2.h \
  /usr/include/c++/4.4/x86_64-linux-gnu/bits/basic_file.h \
  /usr/include/c++/4.4/x86_64-linux-gnu/bits/c++io.h \
- /usr/include/c++/4.4/bits/fstream.tcc /usr/include/gsl/gsl_vector.h \
+ /usr/include/c++/4.4/bits/fstream.tcc /usr/include/c++/4.4/cmath \
+ /usr/include/math.h /usr/include/bits/huge_val.h \
+ /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
+ /usr/include/bits/inf.h /usr/include/bits/nan.h \
+ /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
+ /usr/include/bits/mathinline.h /usr/include/c++/4.4/bits/cmath.tcc \
+ /usr/include/gsl/gsl_vector.h \
  /usr/include/gsl/gsl_vector_complex_long_double.h /usr/include/stdlib.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/sys/types.h /usr/include/sys/select.h \
@@ -335,6 +341,28 @@ p1_driver.o: p1_driver.cc /usr/include/c++/4.4/iostream \
 /usr/include/c++/4.4/x86_64-linux-gnu/bits/c++io.h:
 
 /usr/include/c++/4.4/bits/fstream.tcc:
+
+/usr/include/c++/4.4/cmath:
+
+/usr/include/math.h:
+
+/usr/include/bits/huge_val.h:
+
+/usr/include/bits/huge_valf.h:
+
+/usr/include/bits/huge_vall.h:
+
+/usr/include/bits/inf.h:
+
+/usr/include/bits/nan.h:
+
+/usr/include/bits/mathdef.h:
+
+/usr/include/bits/mathcalls.h:
+
+/usr/include/bits/mathinline.h:
+
+/usr/include/c++/4.4/bits/cmath.tcc:
 
 /usr/include/gsl/gsl_vector.h:
 
