@@ -20,12 +20,12 @@
 
 
 //
-// PatternSetRef Class  --  Member function implementations
+// PatternSet Class  --  Member function implementations
 //
 
 // constructors
 
-PatternSetRef::PatternSetRef(int num_pat, int num_inputs, int num_targets) {
+PatternSet::PatternSet(int num_pat, int num_inputs, int num_targets) {
     n_patterns = num_pat;
     n_inputs = num_inputs;
     n_targets = num_targets;
@@ -64,7 +64,7 @@ PatternSetRef::PatternSetRef(int num_pat, int num_inputs, int num_targets) {
     }
 }
 
-PatternSetRef::PatternSetRef(const PatternSetRef& pset) {
+PatternSet::PatternSet(const PatternSet& pset) {
     n_patterns = pset.n_patterns;
     n_inputs = pset.n_inputs;
     n_targets = pset.n_targets;
@@ -105,7 +105,7 @@ PatternSetRef::PatternSetRef(const PatternSetRef& pset) {
 
 // assignment
 
-PatternSetRef& PatternSetRef::operator=(const PatternSetRef& pset) {
+PatternSet& PatternSet::operator=(const PatternSet& pset) {
     int old_n_patterns;
 
     // Do nothing if we are assigning a pattern set to itself ...
@@ -168,7 +168,7 @@ PatternSetRef& PatternSetRef::operator=(const PatternSetRef& pset) {
 
 // destructor
 
-PatternSetRef::~PatternSetRef() {
+PatternSet::~PatternSet() {
     n_patterns = -1;
     n_inputs = -1;
     n_targets = -1;
@@ -197,7 +197,7 @@ PatternSetRef::~PatternSetRef() {
 //                   properly initialized or the permute flag is false.
 //                   Return a negative value on error.
 
-int PatternSetRef::get_permuted_i(int t) const {
+int PatternSet::get_permuted_i(int t) const {
     if ((t >= 0) && (t < n_patterns)) {
         if (permutation)
             return permutation[t];
@@ -213,7 +213,7 @@ int PatternSetRef::get_permuted_i(int t) const {
 //                 into the given vector, returning a pointer to the 
 //                 vector.  Return NULL on error.
 
-gsl_vector* PatternSetRef::full_pattern(int i, gsl_vector* v) const {
+gsl_vector* PatternSet::full_pattern(int i, gsl_vector* v) const {
     // Some of these error tests might be considered overly conservative ...
     if (((i >= 0) && (i < n_patterns)) &&
             (v != NULL) && (v->size == n_inputs + n_targets)) {
@@ -236,7 +236,7 @@ gsl_vector* PatternSetRef::full_pattern(int i, gsl_vector* v) const {
 //                  if the vector is of the wrong size or if any other
 //                  error arises.
 
-gsl_vector* PatternSetRef::input_pattern(int i, gsl_vector* v) const {
+gsl_vector* PatternSet::input_pattern(int i, gsl_vector* v) const {
     if ((i >= 0) && (i < n_patterns) &&
             (v != NULL) && (v->size == n_inputs)) {
         (void) gsl_matrix_get_row(v, inputs_m, i);
@@ -252,7 +252,7 @@ gsl_vector* PatternSetRef::input_pattern(int i, gsl_vector* v) const {
 //                      returning the number of elements copied, or a 
 //                      negative value on error.
 
-int PatternSetRef::set_input_pattern(int i, gsl_vector* v) {
+int PatternSet::set_input_pattern(int i, gsl_vector* v) {
     if ((i >= 0) && (i < n_patterns) &&
             (v != NULL) && (v->size == n_inputs)) {
         (void) gsl_matrix_set_row(inputs_m, i, v);
@@ -268,7 +268,7 @@ int PatternSetRef::set_input_pattern(int i, gsl_vector* v) {
 //                   if the vector is of the wrong size or if any other 
 //                   error arises.
 
-gsl_vector* PatternSetRef::target_pattern(int i, gsl_vector* v) const {
+gsl_vector* PatternSet::target_pattern(int i, gsl_vector* v) const {
     if ((i >= 0) && (i < n_patterns) &&
             (v != NULL) && (v->size == n_targets)) {
         (void) gsl_matrix_get_row(v, targets_m, i);
@@ -284,7 +284,7 @@ gsl_vector* PatternSetRef::target_pattern(int i, gsl_vector* v) const {
 //                       returning the number of elements copied, or a 
 //                       negative value on error.
 
-int PatternSetRef::set_target_pattern(int i, gsl_vector* v) {
+int PatternSet::set_target_pattern(int i, gsl_vector* v) {
     if ((i >= 0) && (i < n_patterns) &&
             (v != NULL) && (v->size == n_targets)) {
         (void) gsl_matrix_set_row(targets_m, i, v);
@@ -299,7 +299,7 @@ int PatternSetRef::set_target_pattern(int i, gsl_vector* v) {
 //         stream, returning the stream, setting the appropriate error
 //         bits on the stream when an error occurs.
 
-istream& operator>>(istream& istr, PatternSetRef& pset) {
+istream& operator>>(istream& istr, PatternSet& pset) {
     double value;  // temporary buffer
 
     if (pset.inputs_m || pset.targets_m) {
@@ -323,7 +323,7 @@ istream& operator>>(istream& istr, PatternSetRef& pset) {
 //          the given output stream, returning the stream and setting
 //          the appropriate error bits on error.
 
-ostream& operator<<(ostream& ostr, const PatternSetRef& pset) {
+ostream& operator<<(ostream& ostr, const PatternSet& pset) {
     int pat_i;     // real pattern index
 
     if (pset.inputs_m || pset.targets_m) {
@@ -356,7 +356,7 @@ ostream& operator<<(ostream& ostr, const PatternSetRef& pset) {
 //                     "t"th element of the permutation array.  Return
 //                     false on error.
 
-bool PatternSetRef::permute_patterns() {
+bool PatternSet::permute_patterns() {
     int swap_i;
     int temp_value;
 
@@ -396,7 +396,7 @@ bool PatternSetRef::permute_patterns() {
 //                   vectors in order of increasing Euclidean distance from
 //                   the given reference vector.  Return false on error.
 
-bool PatternSetRef::sort_euclidean(gsl_vector* ref_v) {
+bool PatternSet::sort_euclidean(gsl_vector* ref_v) {
     if (permutation) {
         double* distances = new double[n_patterns];
         size_t* perm = new size_t[n_patterns];
@@ -438,7 +438,7 @@ bool PatternSetRef::sort_euclidean(gsl_vector* ref_v) {
 //                 vectors in order of increasing angular distance from
 //                 the given reference vector.  Return false on error.
 
-bool PatternSetRef::sort_angular(gsl_vector* ref_v) {
+bool PatternSet::sort_angular(gsl_vector* ref_v) {
     if (permutation) {
         double* distances = new double[n_patterns];
         size_t* perm = new size_t[n_patterns];
@@ -536,7 +536,7 @@ gsl_matrix* covariance_matrix(gsl_matrix* cov_m, gsl_matrix* data_m,
 //                The copy should be freshly allocated.  Return the
 //                original pattern set on error.
 
-PatternSetRef& PatternSetRef::pca_project() {
+PatternSet& PatternSet::pca_project() {
     if ((n_patterns > 0) && (n_inputs > 0)) {
         // compute the vector element means ...
         gsl_vector* means_v = gsl_vector_alloc(n_inputs);
@@ -559,7 +559,7 @@ PatternSetRef& PatternSetRef::pca_project() {
         (void) gsl_sort_index(eval_perm, eigenvalues->data, 
                 eigenvalues->stride, n_inputs);
         // make a copy of the pattern set, using the copy constructor ...
-        PatternSetRef* new_pset = new PatternSetRef(*this);
+        PatternSet* new_pset = new PatternSet(*this);
         // allocate storage for an orginal pattern vector and the corresponding
         // projected vector ...
         gsl_vector* pat_v = gsl_vector_alloc(n_inputs);
