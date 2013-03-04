@@ -3,5 +3,5 @@
 # David Noelle - Tue Mar 31 20:21:55 PDT 2009
 #
 
-bin_PROGRAMS = p1_driver
-p1_driver_SOURCES = p1_driver.cc patterns.cc patterns.h
+bin_PROGRAMS = p2_driver
+p2_driver_SOURCES = p2_driver.cc patterns.cc patterns.h

@@ -5,8 +5,8 @@
 # Generated with the help of "autoscan".
 #
 
-AC_INIT([p1_driver],[1.0], [dnoelle@ucmerced.edu])
-AC_CONFIG_SRCDIR([p1_driver.cc])
+AC_INIT([p2_driver],[1.0], [dnoelle@ucmerced.edu])
+AC_CONFIG_SRCDIR([p2_driver.cc])
 AM_INIT_AUTOMAKE
 AC_PROG_CXX
 AC_PROG_INSTALL

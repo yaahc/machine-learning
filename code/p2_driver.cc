@@ -70,6 +70,7 @@ int main(int argc, char** argv) {
     config_file_str >> testing_file;
     config_file_str >> output_file;
 
+    cout << k << " " << input_dimensionality << " " << output_dimensionality << " " << distance_metric << " " << output_method << " " << num_training << " " << training_file << " " << num_testing << " " << testing_file << " " << output_file << endl;
     // Make pattern set ...
     pset = new PatternSet(num_training, input_dimensionality, output_dimensionality);
     // Open the pattern set file ...
@@ -87,7 +88,6 @@ int main(int argc, char** argv) {
 
     //clasify the training set... and I wonder
     PatternSet* testingSet = new PatternSet(num_testing, input_dimensionality, output_dimensionality);
-
     input_file_str.open(trim(testing_file).c_str());
     if(!input_file_str.is_open()) {
         cerr << argv[0] << " error: cannot open specified pattern file." << endl;
@@ -104,8 +104,7 @@ int main(int argc, char** argv) {
     gsl_vector* target_vector = gsl_vector_alloc(output_dimensionality);
     gsl_vector* neighbor_i = gsl_vector_alloc(output_dimensionality);
     pset->set_permute_flag();
-    ofstream output_file_str(output_file);
-
+    ofstream output_file_str(trim(output_file).c_str());
     double totalSSE = 0;
     for(int i = 0; i < num_testing; i++) {
         //input vector
@@ -178,6 +177,7 @@ int main(int argc, char** argv) {
         output_file_str << sse << endl;
     }
     output_file_str << totalSSE << endl;
+    output_file_str.close();
     /* // Read the target vector ... */
     /* target_vector = gsl_vector_alloc(input_dimensionality); */
     /* cout << "Enter the target vector, with elements separated by whitespace:" */
