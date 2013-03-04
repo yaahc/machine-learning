@@ -1,0 +1,31 @@
+
+This data set involves the analysis of bits of glass in order to
+determine if they are composed of a particular kind of glass ("float")
+that is used in buildings and car windows.  Interest in this data set
+stems from the world of forensics, where the identification of this
+glass type is often salient in criminal investigations.  The data set
+consists of nine real-valued features, and each example is to
+classified into one of two categories:  float or non-float.  The
+columns of the provided data files are:
+
+  1.  refraction index
+  2.  sodium oxide
+  3.  magnesium oxide
+  4.  aluminum oxide
+  5.  silcon oxide
+  6.  potassium oxide
+  7.  calcium oxide
+  8.  barium oxide
+  9.  iron oxide
+ 
+ 10.  float identification variable (1 iff example is float)
+ 11.  non-float identification variable (1 iff example is non-float)
+
+The nine input features have all been linearly scaled to fit within
+the range from zero to one.  The goal is to estimate the posterior
+probability of membership in the float category, given these nine
+features.
+
+A training set consisting of 200 examples is provided, along with a
+testing set consisting of 14 examples.
+

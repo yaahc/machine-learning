@@ -1,0 +1,21 @@
+
+The columns in the accompanying pattern files contain the
+following information:
+
+   #  Attribute                     Domain
+   -- -----------------------------------------
+   1. Clump Thickness               1 - 10
+   2. Uniformity of Cell Size       1 - 10
+   3. Uniformity of Cell Shape      1 - 10
+   4. Marginal Adhesion             1 - 10
+   5. Single Epithelial Cell Size   1 - 10
+   6. Bare Nuclei                   1 - 10
+   7. Bland Chromatin               1 - 10
+   8. Normal Nucleoli               1 - 10
+   9. Mitoses                       1 - 10
+  10. Class (Malignant)             0/1 for benign/malignant
+  11. Class (Benign)                0/1 for malignant/benign
+
+The goal is to predict the 10th and 11th attributes from the
+first nine.
+
