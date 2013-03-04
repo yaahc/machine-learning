@@ -1,0 +1,282 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ACLOCAL	Makefile	/^ACLOCAL = ${SHELL} \/home\/john\/code\/machine-learning\/code\/missing --run aclocal-1.11$/;"	m
+ACLOCAL_M4	Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
+AMTAR	Makefile	/^AMTAR = $${TAR-tar}$/;"	m
+AUTOCONF	Makefile	/^AUTOCONF = ${SHELL} \/home\/john\/code\/machine-learning\/code\/missing --run autoconf$/;"	m
+AUTOHEADER	Makefile	/^AUTOHEADER = ${SHELL} \/home\/john\/code\/machine-learning\/code\/missing --run autoheader$/;"	m
+AUTOMAKE	Makefile	/^AUTOMAKE = ${SHELL} \/home\/john\/code\/machine-learning\/code\/missing --run automake-1.11$/;"	m
+AWK	Makefile	/^AWK = gawk$/;"	m
+CC	Makefile	/^CC = gcc$/;"	m
+CCDEPMODE	Makefile	/^CCDEPMODE = depmode=gcc3$/;"	m
+CCLD	Makefile	/^CCLD = $(CC)$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -g -O2$/;"	m
+COMPILE	Makefile	/^COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \\$/;"	m
+CONFIG_CLEAN_FILES	Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
+CONFIG_CLEAN_VPATH_FILES	Makefile	/^CONFIG_CLEAN_VPATH_FILES =$/;"	m
+CPP	Makefile	/^CPP = gcc -E$/;"	m
+CPPFLAGS	Makefile	/^CPPFLAGS = $/;"	m
+CTAGS	Makefile	/^CTAGS = ctags$/;"	m
+CXX	Makefile	/^CXX = g++$/;"	m
+CXXCOMPILE	Makefile	/^CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \\$/;"	m
+CXXDEPMODE	Makefile	/^CXXDEPMODE = depmode=gcc3$/;"	m
+CXXFLAGS	Makefile	/^CXXFLAGS = -g -O2$/;"	m
+CXXLD	Makefile	/^CXXLD = $(CXX)$/;"	m
+CXXLINK	Makefile	/^CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \\$/;"	m
+CYGPATH_W	Makefile	/^CYGPATH_W = echo$/;"	m
+DEFAULT_INCLUDES	Makefile	/^DEFAULT_INCLUDES = -I.$/;"	m
+DEFS	Makefile	/^DEFS = -DPACKAGE_NAME=\\"p1_driver\\" -DPACKAGE_TARNAME=\\"p1_driver\\" -DPACKAGE_VERSION=\\"1.0\\" -DPACKAGE_STRING=\\"p1_driver\\ 1.0\\" -DPACKAGE_BUGREPORT=\\"dnoelle@ucmerced.edu\\" -DPACKAGE_URL=\\"\\" -DPACKAGE=\\"p1_driver\\" -DVERSION=\\"1.0\\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1$/;"	m
+DEPDIR	Makefile	/^DEPDIR = .deps$/;"	m
+DISTFILES	Makefile	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DIST_ARCHIVES	Makefile	/^DIST_ARCHIVES = $(distdir).tar.gz$/;"	m
+DIST_COMMON	Makefile	/^DIST_COMMON = README $(am__configure_deps) $(srcdir)\/Makefile.am \\$/;"	m
+DIST_SOURCES	Makefile	/^DIST_SOURCES = $(p1_driver_SOURCES)$/;"	m
+ECHO_C	Makefile	/^ECHO_C = $/;"	m
+ECHO_N	Makefile	/^ECHO_N = -n$/;"	m
+ECHO_T	Makefile	/^ECHO_T = $/;"	m
+EGREP	Makefile	/^EGREP = \/bin\/grep -E$/;"	m
+ETAGS	Makefile	/^ETAGS = etags$/;"	m
+EXEEXT	Makefile	/^EXEEXT = $/;"	m
+GREP	Makefile	/^GREP = \/bin\/grep$/;"	m
+GZIP_ENV	Makefile	/^GZIP_ENV = --best$/;"	m
+INSTALL	Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL_DATA	Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_HEADER	Makefile	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_PROGRAM	Makefile	/^INSTALL_PROGRAM = ${INSTALL}$/;"	m
+INSTALL_SCRIPT	Makefile	/^INSTALL_SCRIPT = ${INSTALL}$/;"	m
+INSTALL_STRIP_PROGRAM	Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS = $/;"	m
+LIBOBJS	Makefile	/^LIBOBJS = $/;"	m
+LIBS	Makefile	/^LIBS = -lgslcblas -lgsl $/;"	m
+LINK	Makefile	/^LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@$/;"	m
+LTLIBOBJS	Makefile	/^LTLIBOBJS = $/;"	m
+MAKEINFO	Makefile	/^MAKEINFO = ${SHELL} \/home\/john\/code\/machine-learning\/code\/missing --run makeinfo$/;"	m
+MKDIR_P	Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
+NORMAL_INSTALL	Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_UNINSTALL	Makefile	/^NORMAL_UNINSTALL = :$/;"	m
+OBJEXT	Makefile	/^OBJEXT = o$/;"	m
+PACKAGE	Makefile	/^PACKAGE = p1_driver$/;"	m
+PACKAGE_BUGREPORT	Makefile	/^PACKAGE_BUGREPORT = dnoelle@ucmerced.edu$/;"	m
+PACKAGE_NAME	Makefile	/^PACKAGE_NAME = p1_driver$/;"	m
+PACKAGE_STRING	Makefile	/^PACKAGE_STRING = p1_driver 1.0$/;"	m
+PACKAGE_TARNAME	Makefile	/^PACKAGE_TARNAME = p1_driver$/;"	m
+PACKAGE_URL	Makefile	/^PACKAGE_URL = $/;"	m
+PACKAGE_VERSION	Makefile	/^PACKAGE_VERSION = 1.0$/;"	m
+PATH_SEPARATOR	Makefile	/^PATH_SEPARATOR = :$/;"	m
+PATTERNS_UTILITIES_INCLUDED	patterns.h	10;"	d
+POST_INSTALL	Makefile	/^POST_INSTALL = :$/;"	m
+POST_UNINSTALL	Makefile	/^POST_UNINSTALL = :$/;"	m
+PRE_INSTALL	Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_UNINSTALL	Makefile	/^PRE_UNINSTALL = :$/;"	m
+PROGRAMS	Makefile	/^PROGRAMS = $(bin_PROGRAMS)$/;"	m
+PatternSet	patterns.cc	/^PatternSet::PatternSet(const PatternSet& pset) {$/;"	f	class:PatternSet	signature:(const PatternSet& pset)
+PatternSet	patterns.cc	/^PatternSet::PatternSet(int num_pat, int num_inputs, int num_targets) {$/;"	f	class:PatternSet	signature:(int num_pat, int num_inputs, int num_targets)
+PatternSet	patterns.h	/^        PatternSet(const PatternSet& pset);$/;"	p	class:PatternSet	access:public	signature:(const PatternSet& pset)
+PatternSet	patterns.h	/^        PatternSet(int num_pat = 0, int num_inputs = 0, int num_targets = 0);$/;"	p	class:PatternSet	access:public	signature:(int num_pat = 0, int num_inputs = 0, int num_targets = 0)
+PatternSet	patterns.h	/^class PatternSet {$/;"	c
+PatternSet::PatternSet	patterns.cc	/^PatternSet::PatternSet(const PatternSet& pset) {$/;"	f	class:PatternSet	signature:(const PatternSet& pset)
+PatternSet::PatternSet	patterns.cc	/^PatternSet::PatternSet(int num_pat, int num_inputs, int num_targets) {$/;"	f	class:PatternSet	signature:(int num_pat, int num_inputs, int num_targets)
+PatternSet::PatternSet	patterns.h	/^        PatternSet(const PatternSet& pset);$/;"	p	class:PatternSet	access:public	signature:(const PatternSet& pset)
+PatternSet::PatternSet	patterns.h	/^        PatternSet(int num_pat = 0, int num_inputs = 0, int num_targets = 0);$/;"	p	class:PatternSet	access:public	signature:(int num_pat = 0, int num_inputs = 0, int num_targets = 0)
+PatternSet::clear_permute_flag	patterns.h	/^        inline void clear_permute_flag() { permute = false; }$/;"	f	class:PatternSet	access:public	signature:()
+PatternSet::distances	patterns.h	/^        double* distances;        \/\/ distances to most recent target sort$/;"	m	class:PatternSet	access:private
+PatternSet::full_pattern	patterns.cc	/^gsl_vector* PatternSet::full_pattern(int i, gsl_vector* v) const {$/;"	f	class:PatternSet	signature:(int i, gsl_vector* v) const
+PatternSet::full_pattern	patterns.h	/^        gsl_vector* full_pattern(int i, gsl_vector* v) const;$/;"	p	class:PatternSet	access:public	signature:(int i, gsl_vector* v) const
+PatternSet::get_distance	patterns.h	/^        inline double get_distance(int index) { return distances[index]; }$/;"	f	class:PatternSet	access:public	signature:(int index)
+PatternSet::get_permute_flag	patterns.h	/^        inline bool get_permute_flag() const { return permute; }$/;"	f	class:PatternSet	access:public	signature:() const
+PatternSet::get_permuted_i	patterns.cc	/^int PatternSet::get_permuted_i(int t) const {$/;"	f	class:PatternSet	signature:(int t) const
+PatternSet::get_permuted_i	patterns.h	/^        int get_permuted_i(int t) const;$/;"	p	class:PatternSet	access:public	signature:(int t) const
+PatternSet::input_pattern	patterns.cc	/^gsl_vector* PatternSet::input_pattern(int i, gsl_vector* v) const {$/;"	f	class:PatternSet	signature:(int i, gsl_vector* v) const
+PatternSet::input_pattern	patterns.h	/^        gsl_vector* input_pattern(int i, gsl_vector* v) const;$/;"	p	class:PatternSet	access:public	signature:(int i, gsl_vector* v) const
+PatternSet::inputs_m	patterns.h	/^        gsl_matrix* inputs_m;     \/\/ the matrix of input vectors, one per row$/;"	m	class:PatternSet	access:private
+PatternSet::n_inputs	patterns.h	/^        int n_inputs;             \/\/ number of input values in each pattern$/;"	m	class:PatternSet	access:private
+PatternSet::n_patterns	patterns.h	/^        int n_patterns;           \/\/ number of patterns$/;"	m	class:PatternSet	access:private
+PatternSet::n_targets	patterns.h	/^        int n_targets;            \/\/ number of target values in each pattern$/;"	m	class:PatternSet	access:private
+PatternSet::number_of_inputs	patterns.h	/^        inline int number_of_inputs() const { return n_inputs; }$/;"	f	class:PatternSet	access:public	signature:() const
+PatternSet::number_of_patterns	patterns.h	/^        inline int number_of_patterns() const { return n_patterns; }$/;"	f	class:PatternSet	access:public	signature:() const
+PatternSet::number_of_targets	patterns.h	/^        inline int number_of_targets() const { return n_targets; }$/;"	f	class:PatternSet	access:public	signature:() const
+PatternSet::operator <<	patterns.h	/^        friend ostream& operator<<(ostream& ostr, const PatternSet& pset);$/;"	p	class:PatternSet	access:friend	signature:(ostream& ostr, const PatternSet& pset)
+PatternSet::operator =	patterns.cc	/^PatternSet& PatternSet::operator=(const PatternSet& pset) {$/;"	f	class:PatternSet	signature:(const PatternSet& pset)
+PatternSet::operator =	patterns.h	/^        PatternSet& operator=(const PatternSet& pset);$/;"	p	class:PatternSet	access:public	signature:(const PatternSet& pset)
+PatternSet::operator >>	patterns.h	/^        friend istream& operator>>(istream& istr, PatternSet& pset);$/;"	p	class:PatternSet	access:friend	signature:(istream& istr, PatternSet& pset)
+PatternSet::pattern_size	patterns.h	/^        inline int pattern_size() const { return (n_inputs + n_targets); }$/;"	f	class:PatternSet	access:public	signature:() const
+PatternSet::pca_project	patterns.cc	/^PatternSet& PatternSet::pca_project() {$/;"	f	class:PatternSet	signature:()
+PatternSet::pca_project	patterns.h	/^        PatternSet& pca_project();$/;"	p	class:PatternSet	access:public	signature:()
+PatternSet::permutation	patterns.h	/^        int* permutation;         \/\/ the pattern indices, randomly permuted$/;"	m	class:PatternSet	access:private
+PatternSet::permute	patterns.h	/^        bool permute;             \/\/ use the permutation sequence, if true$/;"	m	class:PatternSet	access:private
+PatternSet::permute_patterns	patterns.cc	/^bool PatternSet::permute_patterns() {$/;"	f	class:PatternSet	signature:()
+PatternSet::permute_patterns	patterns.h	/^        bool permute_patterns();$/;"	p	class:PatternSet	access:public	signature:()
+PatternSet::set_input_pattern	patterns.cc	/^int PatternSet::set_input_pattern(int i, gsl_vector* v) {$/;"	f	class:PatternSet	signature:(int i, gsl_vector* v)
+PatternSet::set_input_pattern	patterns.h	/^        int set_input_pattern(int i, gsl_vector* v);$/;"	p	class:PatternSet	access:public	signature:(int i, gsl_vector* v)
+PatternSet::set_permute_flag	patterns.h	/^        inline void set_permute_flag() { permute = true; }$/;"	f	class:PatternSet	access:public	signature:()
+PatternSet::set_target_pattern	patterns.cc	/^int PatternSet::set_target_pattern(int i, gsl_vector* v) {$/;"	f	class:PatternSet	signature:(int i, gsl_vector* v)
+PatternSet::set_target_pattern	patterns.h	/^        int set_target_pattern(int i, gsl_vector* v);$/;"	p	class:PatternSet	access:public	signature:(int i, gsl_vector* v)
+PatternSet::sort_angular	patterns.cc	/^bool PatternSet::sort_angular(gsl_vector* ref_v) {$/;"	f	class:PatternSet	signature:(gsl_vector* ref_v)
+PatternSet::sort_angular	patterns.h	/^        bool sort_angular(gsl_vector* ref_v);$/;"	p	class:PatternSet	access:public	signature:(gsl_vector* ref_v)
+PatternSet::sort_euclidean	patterns.cc	/^bool PatternSet::sort_euclidean(gsl_vector* ref_v) {$/;"	f	class:PatternSet	signature:(gsl_vector* ref_v)
+PatternSet::sort_euclidean	patterns.h	/^        bool sort_euclidean(gsl_vector* ref_v);$/;"	p	class:PatternSet	access:public	signature:(gsl_vector* ref_v)
+PatternSet::target_pattern	patterns.cc	/^gsl_vector* PatternSet::target_pattern(int i, gsl_vector* v) const {$/;"	f	class:PatternSet	signature:(int i, gsl_vector* v) const
+PatternSet::target_pattern	patterns.h	/^        gsl_vector* target_pattern(int i, gsl_vector* v) const;$/;"	p	class:PatternSet	access:public	signature:(int i, gsl_vector* v) const
+PatternSet::targets_m	patterns.h	/^        gsl_matrix* targets_m;    \/\/ the matrix of target vectors, one per row$/;"	m	class:PatternSet	access:private
+PatternSet::~PatternSet	patterns.cc	/^PatternSet::~PatternSet() {$/;"	f	class:PatternSet	signature:()
+PatternSet::~PatternSet	patterns.h	/^        ~PatternSet();$/;"	p	class:PatternSet	access:public	signature:()
+SET_MAKE	Makefile	/^SET_MAKE = $/;"	m
+SHELL	Makefile	/^SHELL = \/bin\/bash$/;"	m
+SOURCES	Makefile	/^SOURCES = $(p1_driver_SOURCES)$/;"	m
+STRIP	Makefile	/^STRIP = $/;"	m
+VERSION	Makefile	/^VERSION = 1.0$/;"	m
+abs_builddir	Makefile	/^abs_builddir = \/home\/john\/code\/machine-learning\/code$/;"	m
+abs_srcdir	Makefile	/^abs_srcdir = \/home\/john\/code\/machine-learning\/code$/;"	m
+abs_top_builddir	Makefile	/^abs_top_builddir = \/home\/john\/code\/machine-learning\/code$/;"	m
+abs_top_srcdir	Makefile	/^abs_top_srcdir = \/home\/john\/code\/machine-learning\/code$/;"	m
+ac_ct_CC	Makefile	/^ac_ct_CC = gcc$/;"	m
+ac_ct_CXX	Makefile	/^ac_ct_CXX = g++$/;"	m
+ac_fn_c_check_header_compile	configure	/^ac_fn_c_check_header_compile ()$/;"	f
+ac_fn_c_check_type	configure	/^ac_fn_c_check_type ()$/;"	f
+ac_fn_c_try_compile	configure	/^ac_fn_c_try_compile ()$/;"	f
+ac_fn_c_try_cpp	configure	/^ac_fn_c_try_cpp ()$/;"	f
+ac_fn_c_try_link	configure	/^ac_fn_c_try_link ()$/;"	f
+ac_fn_c_try_run	configure	/^ac_fn_c_try_run ()$/;"	f
+ac_fn_cxx_try_compile	configure	/^ac_fn_cxx_try_compile ()$/;"	f
+am__CONFIG_DISTCLEAN_FILES	Makefile	/^am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \\$/;"	m
+am__aclocal_m4_deps	Makefile	/^am__aclocal_m4_deps = $(top_srcdir)\/configure.ac$/;"	m
+am__cd	Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__configure_deps	Makefile	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
+am__depfiles_maybe	Makefile	/^am__depfiles_maybe = depfiles$/;"	m
+am__distuninstallcheck_listfiles	Makefile	/^am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \\$/;"	m
+am__include	Makefile	/^am__include = include$/;"	m
+am__installdirs	Makefile	/^am__installdirs = "$(DESTDIR)$(bindir)"$/;"	m
+am__leading_dot	Makefile	/^am__leading_dot = .$/;"	m
+am__mv	Makefile	/^am__mv = mv -f$/;"	m
+am__quote	Makefile	/^am__quote = $/;"	m
+am__remove_distdir	Makefile	/^am__remove_distdir = \\$/;"	m
+am__tar	Makefile	/^am__tar = $${TAR-tar} chof - "$$tardir"$/;"	m
+am__untar	Makefile	/^am__untar = $${TAR-tar} xf -$/;"	m
+am_p1_driver_OBJECTS	Makefile	/^am_p1_driver_OBJECTS = p1_driver.$(OBJEXT) patterns.$(OBJEXT)$/;"	m
+as_fn_append	config.status	/^  as_fn_append ()$/;"	f
+as_fn_append	configure	/^  as_fn_append ()$/;"	f
+as_fn_arith	config.status	/^  as_fn_arith ()$/;"	f
+as_fn_arith	configure	/^  as_fn_arith ()$/;"	f
+as_fn_error	config.status	/^as_fn_error ()$/;"	f
+as_fn_error	configure	/^as_fn_error ()$/;"	f
+as_fn_exit	config.status	/^as_fn_exit ()$/;"	f
+as_fn_exit	configure	/^as_fn_exit ()$/;"	f
+as_fn_failure	configure	/^as_fn_failure () { as_fn_return 1; }$/;"	f
+as_fn_mkdir_p	config.status	/^as_fn_mkdir_p ()$/;"	f
+as_fn_mkdir_p	configure	/^as_fn_mkdir_p ()$/;"	f
+as_fn_ret_failure	configure	/^as_fn_ret_failure () { return 1; }$/;"	f
+as_fn_ret_success	configure	/^as_fn_ret_success () { return 0; }$/;"	f
+as_fn_set_status	config.status	/^as_fn_set_status ()$/;"	f
+as_fn_set_status	configure	/^as_fn_set_status ()$/;"	f
+as_fn_success	configure	/^as_fn_success () { as_fn_return 0; }$/;"	f
+as_fn_unset	config.status	/^as_fn_unset ()$/;"	f
+as_fn_unset	configure	/^as_fn_unset ()$/;"	f
+bin_PROGRAMS	Makefile	/^bin_PROGRAMS = p1_driver$(EXEEXT)$/;"	m
+bindir	Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
+build_alias	Makefile	/^build_alias = $/;"	m
+builddir	Makefile	/^builddir = .$/;"	m
+clear_permute_flag	patterns.h	/^        inline void clear_permute_flag() { permute = false; }$/;"	f	class:PatternSet	access:public	signature:()
+covariance_matrix	patterns.cc	/^gsl_matrix* covariance_matrix(gsl_matrix* cov_m, gsl_matrix* data_m, $/;"	f	signature:(gsl_matrix* cov_m, gsl_matrix* data_m, gsl_vector* means_v)
+datadir	Makefile	/^datadir = ${datarootdir}$/;"	m
+datarootdir	Makefile	/^datarootdir = ${prefix}\/share$/;"	m
+depcomp	Makefile	/^depcomp = $(SHELL) $(top_srcdir)\/depcomp$/;"	m
+distances	patterns.h	/^        double* distances;        \/\/ distances to most recent target sort$/;"	m	class:PatternSet	access:private
+distcleancheck_listfiles	Makefile	/^distcleancheck_listfiles = find . -type f -print$/;"	m
+distdir	Makefile	/^distdir = $(PACKAGE)-$(VERSION)$/;"	m
+distuninstallcheck_listfiles	Makefile	/^distuninstallcheck_listfiles = find . -type f -print$/;"	m
+docdir	Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
+dvidir	Makefile	/^dvidir = ${docdir}$/;"	m
+exec_prefix	Makefile	/^exec_prefix = ${prefix}$/;"	m
+full_pattern	patterns.cc	/^gsl_vector* PatternSet::full_pattern(int i, gsl_vector* v) const {$/;"	f	class:PatternSet	signature:(int i, gsl_vector* v) const
+full_pattern	patterns.h	/^        gsl_vector* full_pattern(int i, gsl_vector* v) const;$/;"	p	class:PatternSet	access:public	signature:(int i, gsl_vector* v) const
+get_distance	patterns.h	/^        inline double get_distance(int index) { return distances[index]; }$/;"	f	class:PatternSet	access:public	signature:(int index)
+get_permute_flag	patterns.h	/^        inline bool get_permute_flag() const { return permute; }$/;"	f	class:PatternSet	access:public	signature:() const
+get_permuted_i	patterns.cc	/^int PatternSet::get_permuted_i(int t) const {$/;"	f	class:PatternSet	signature:(int t) const
+get_permuted_i	patterns.h	/^        int get_permuted_i(int t) const;$/;"	p	class:PatternSet	access:public	signature:(int t) const
+host_alias	Makefile	/^host_alias = $/;"	m
+htmldir	Makefile	/^htmldir = ${docdir}$/;"	m
+includedir	Makefile	/^includedir = ${prefix}\/include$/;"	m
+infodir	Makefile	/^infodir = ${datarootdir}\/info$/;"	m
+input_pattern	patterns.cc	/^gsl_vector* PatternSet::input_pattern(int i, gsl_vector* v) const {$/;"	f	class:PatternSet	signature:(int i, gsl_vector* v) const
+input_pattern	patterns.h	/^        gsl_vector* input_pattern(int i, gsl_vector* v) const;$/;"	p	class:PatternSet	access:public	signature:(int i, gsl_vector* v) const
+inputs_m	patterns.h	/^        gsl_matrix* inputs_m;     \/\/ the matrix of input vectors, one per row$/;"	m	class:PatternSet	access:private
+install_sh	Makefile	/^install_sh = ${SHELL} \/home\/john\/code\/machine-learning\/code\/install-sh$/;"	m
+install_sh_DATA	Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_PROGRAM	Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
+libdir	Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libexecdir	Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
+localedir	Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
+localstatedir	Makefile	/^localstatedir = ${prefix}\/var$/;"	m
+main	p1_driver.cc	/^int main(int argc, char** argv) {$/;"	f	signature:(int argc, char** argv)
+mandir	Makefile	/^mandir = ${datarootdir}\/man$/;"	m
+mkdir_p	Makefile	/^mkdir_p = \/bin\/mkdir -p$/;"	m
+mkinstalldirs	Makefile	/^mkinstalldirs = $(install_sh) -d$/;"	m
+n_inputs	patterns.h	/^        int n_inputs;             \/\/ number of input values in each pattern$/;"	m	class:PatternSet	access:private
+n_patterns	patterns.h	/^        int n_patterns;           \/\/ number of patterns$/;"	m	class:PatternSet	access:private
+n_targets	patterns.h	/^        int n_targets;            \/\/ number of target values in each pattern$/;"	m	class:PatternSet	access:private
+number_of_inputs	patterns.h	/^        inline int number_of_inputs() const { return n_inputs; }$/;"	f	class:PatternSet	access:public	signature:() const
+number_of_patterns	patterns.h	/^        inline int number_of_patterns() const { return n_patterns; }$/;"	f	class:PatternSet	access:public	signature:() const
+number_of_targets	patterns.h	/^        inline int number_of_targets() const { return n_targets; }$/;"	f	class:PatternSet	access:public	signature:() const
+oldincludedir	Makefile	/^oldincludedir = \/usr\/include$/;"	m
+operator <<	patterns.cc	/^ostream& operator<<(ostream& ostr, const PatternSet& pset) {$/;"	f	signature:(ostream& ostr, const PatternSet& pset)
+operator <<	patterns.h	/^        friend ostream& operator<<(ostream& ostr, const PatternSet& pset);$/;"	p	class:PatternSet	access:friend	signature:(ostream& ostr, const PatternSet& pset)
+operator =	patterns.cc	/^PatternSet& PatternSet::operator=(const PatternSet& pset) {$/;"	f	class:PatternSet	signature:(const PatternSet& pset)
+operator =	patterns.h	/^        PatternSet& operator=(const PatternSet& pset);$/;"	p	class:PatternSet	access:public	signature:(const PatternSet& pset)
+operator >>	patterns.cc	/^istream& operator>>(istream& istr, PatternSet& pset) {$/;"	f	signature:(istream& istr, PatternSet& pset)
+operator >>	patterns.h	/^        friend istream& operator>>(istream& istr, PatternSet& pset);$/;"	p	class:PatternSet	access:friend	signature:(istream& istr, PatternSet& pset)
+p1_driver_LDADD	Makefile	/^p1_driver_LDADD = $(LDADD)$/;"	m
+p1_driver_OBJECTS	Makefile	/^p1_driver_OBJECTS = $(am_p1_driver_OBJECTS)$/;"	m
+p1_driver_SOURCES	Makefile	/^p1_driver_SOURCES = p1_driver.cc patterns.cc patterns.h$/;"	m
+pattern_size	patterns.h	/^        inline int pattern_size() const { return (n_inputs + n_targets); }$/;"	f	class:PatternSet	access:public	signature:() const
+pca_project	patterns.cc	/^PatternSet& PatternSet::pca_project() {$/;"	f	class:PatternSet	signature:()
+pca_project	patterns.h	/^        PatternSet& pca_project();$/;"	p	class:PatternSet	access:public	signature:()
+pdfdir	Makefile	/^pdfdir = ${docdir}$/;"	m
+permutation	patterns.h	/^        int* permutation;         \/\/ the pattern indices, randomly permuted$/;"	m	class:PatternSet	access:private
+permute	patterns.h	/^        bool permute;             \/\/ use the permutation sequence, if true$/;"	m	class:PatternSet	access:private
+permute_patterns	patterns.cc	/^bool PatternSet::permute_patterns() {$/;"	f	class:PatternSet	signature:()
+permute_patterns	patterns.h	/^        bool permute_patterns();$/;"	p	class:PatternSet	access:public	signature:()
+pkgdatadir	Makefile	/^pkgdatadir = $(datadir)\/p1_driver$/;"	m
+pkgincludedir	Makefile	/^pkgincludedir = $(includedir)\/p1_driver$/;"	m
+pkglibdir	Makefile	/^pkglibdir = $(libdir)\/p1_driver$/;"	m
+pkglibexecdir	Makefile	/^pkglibexecdir = $(libexecdir)\/p1_driver$/;"	m
+prefix	Makefile	/^prefix = \/usr\/local$/;"	m
+program_transform_name	Makefile	/^program_transform_name = s,x,x,$/;"	m
+prototypes	configure	/^   function prototypes and stuff, but not '\\xHH' hex character constants.$/;"	f
+psdir	Makefile	/^psdir = ${docdir}$/;"	m
+sbindir	Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
+set_input_pattern	patterns.cc	/^int PatternSet::set_input_pattern(int i, gsl_vector* v) {$/;"	f	class:PatternSet	signature:(int i, gsl_vector* v)
+set_input_pattern	patterns.h	/^        int set_input_pattern(int i, gsl_vector* v);$/;"	p	class:PatternSet	access:public	signature:(int i, gsl_vector* v)
+set_permute_flag	patterns.h	/^        inline void set_permute_flag() { permute = true; }$/;"	f	class:PatternSet	access:public	signature:()
+set_target_pattern	patterns.cc	/^int PatternSet::set_target_pattern(int i, gsl_vector* v) {$/;"	f	class:PatternSet	signature:(int i, gsl_vector* v)
+set_target_pattern	patterns.h	/^        int set_target_pattern(int i, gsl_vector* v);$/;"	p	class:PatternSet	access:public	signature:(int i, gsl_vector* v)
+sharedstatedir	Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
+sort_angular	patterns.cc	/^bool PatternSet::sort_angular(gsl_vector* ref_v) {$/;"	f	class:PatternSet	signature:(gsl_vector* ref_v)
+sort_angular	patterns.h	/^        bool sort_angular(gsl_vector* ref_v);$/;"	p	class:PatternSet	access:public	signature:(gsl_vector* ref_v)
+sort_euclidean	patterns.cc	/^bool PatternSet::sort_euclidean(gsl_vector* ref_v) {$/;"	f	class:PatternSet	signature:(gsl_vector* ref_v)
+sort_euclidean	patterns.h	/^        bool sort_euclidean(gsl_vector* ref_v);$/;"	p	class:PatternSet	access:public	signature:(gsl_vector* ref_v)
+srcdir	Makefile	/^srcdir = .$/;"	m
+subdir	Makefile	/^subdir = .$/;"	m
+sysconfdir	Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | BZIP2=$${BZIP2--9} bzip2 -c >$(distdir).tar.bz2$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | GZIP=$(GZIP_ENV) gzip -c >$(distdir).tar.gz$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | XZ_OPT=$${XZ_OPT--e} xz -c >$(distdir).tar.xz$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | compress -c >$(distdir).tar.Z$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | lzip -c $${LZIP_OPT--9} >$(distdir).tar.lz$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | lzma -9 -c >$(distdir).tar.lzma$/;"	m
+target_alias	Makefile	/^target_alias = $/;"	m
+target_pattern	patterns.cc	/^gsl_vector* PatternSet::target_pattern(int i, gsl_vector* v) const {$/;"	f	class:PatternSet	signature:(int i, gsl_vector* v) const
+target_pattern	patterns.h	/^        gsl_vector* target_pattern(int i, gsl_vector* v) const;$/;"	p	class:PatternSet	access:public	signature:(int i, gsl_vector* v) const
+targets_m	patterns.h	/^        gsl_matrix* targets_m;    \/\/ the matrix of target vectors, one per row$/;"	m	class:PatternSet	access:private
+top_build_prefix	Makefile	/^top_build_prefix = $/;"	m
+top_builddir	Makefile	/^top_builddir = .$/;"	m
+top_distdir	Makefile	/^top_distdir = $(distdir)$/;"	m
+top_srcdir	Makefile	/^top_srcdir = .$/;"	m
+transform	Makefile	/^transform = $(program_transform_name)$/;"	m
+trim	p1_driver.cc	/^string& trim(string& s) {$/;"	f	signature:(string& s)
+~PatternSet	patterns.cc	/^PatternSet::~PatternSet() {$/;"	f	class:PatternSet	signature:()
+~PatternSet	patterns.h	/^        ~PatternSet();$/;"	p	class:PatternSet	access:public	signature:()
