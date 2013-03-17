@@ -138,19 +138,19 @@ void calc_gains(DTreeNode* node) {
         double can = 0;
         double cnap = 0;
         double cnan = 0;
-        gsl_vector* curr = gsl_vector_alloc(17);//TODO access the correct size dynamicly
+        gsl_vector* curr = gsl_vector_alloc(node->pset->pattern_size());//TODO access the correct size dynamicly
         for(int i = 0; i < node->num_examples; i++) {
             node->pset->full_pattern(node->example_indexes[i], curr);
             //gsl_vector_get(curr, it->index) <- if it has this attribute or not
             //gsl_vector_get(curr, 17) <- the output value of the vector TODO find this dynamically
             if(gsl_vector_get(curr, it->index) >= 0.5) { //has the attribute
-                if(gsl_vector_get(curr, 16) >= 0.5) { //positive example
+                if(gsl_vector_get(curr, node->pset->pattern_size()-1) >= 0.5) { //positive example
                     cap++;
                 } else {
                     can++;
                 }
             } else {
-                if(gsl_vector_get(curr, 16) >= 0.5) {
+                if(gsl_vector_get(curr, node->pset->pattern_size()-1) >= 0.5) {
                     cnap++;
                 } else {
                     cnan++;
@@ -193,14 +193,14 @@ void printDT(DTreeNode* root, int depth) {
             for(int i = 0; i < depth; i++)
                 cout << "  ";
             cout << root->decision.index + 1;
-            cout << " false then" << root->num_positive << " " << root->num_examples <<"\n";
+            cout << " false then\n";
             printDT(root->childN, depth+1);
         }
         if(root->childP) {
             for(int i = 0; i < depth; i++)
                 cout << "  ";
             cout << root->decision.index + 1;
-            cout << " true then" << root->num_positive << " " << root->num_examples <<"\n";
+            cout << " true then\n";
             printDT(root->childP, depth+1);
         }    }
 }
@@ -230,7 +230,7 @@ void ID3(DTreeNode* node) {
     //split* the set based on the attribute
     int * positive = new int[node->decision.num_attribute];
     int * negative = new int[node->num_examples - node->decision.num_attribute];
-    gsl_vector* curr = gsl_vector_alloc(17);//TODO access the correct size dynamicly
+    gsl_vector* curr = gsl_vector_alloc(node->pset->pattern_size());//TODO access the correct size dynamicly
     //gsl_vector_get(curr, it->index) <- if it has this attribute or not
     //gsl_vector_get(curr, 17) <- the output value of the vector TODO find this dynamically
     for(int i = 0, j = 0; j+i < node->num_examples;) {
