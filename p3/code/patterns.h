@@ -39,10 +39,10 @@ class PatternSet {
         gsl_matrix* targets_m;    // the matrix of target vectors, one per row
 
         bool permute;             // use the permutation sequence, if true
-        int* permutation;         // the pattern indices, randomly permuted
         double* distances;        // distances to most recent target sort
 
     public:
+        int* permutation;         // the pattern indices, randomly permuted
 
         // constructors & assignment
         PatternSet(int num_pat = 0, int num_inputs = 0, int num_targets = 0);

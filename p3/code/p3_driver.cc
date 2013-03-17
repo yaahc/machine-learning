@@ -13,10 +13,12 @@
 #include <fstream>
 #include <string>
 #include <cmath>
+#include <cstring>
 
 #include <gsl/gsl_vector.h>
 
 #include "patterns.h"
+#include "DTreeNode.h"
 
 
 using namespace std;
@@ -36,6 +38,7 @@ string& trim(string& s) {
     return (s);
 }
 
+void ID3(DTreeNode* node);
 
 //
 // Main Driver Program
@@ -57,6 +60,7 @@ int main(int argc, char** argv) {
     // Check number of arguments ...
     if (argc != 2)
         cerr << argv[0] << " warning: incorrect number of arguments" << endl;
+
     // Read parameters ...
     config_file_str.open(argv[1]);
     if(!config_file_str.is_open()) {
@@ -71,149 +75,112 @@ int main(int argc, char** argv) {
     config_file_str >> output_file_name;
 
     // Make pattern set ...
-    pset = new PatternSet(num_training, input_dimensionality, output_dimensionality);
+    pset = new PatternSet(num_training, input_dimensionality, 1);
+
     // Open the pattern set file ...
-    input_file_str.open(trim(training_file).c_str());
+    input_file_str.open(trim(training_file_name).c_str());
     if (!input_file_str.is_open()) {
         cerr << argv[0] << " error:  cannot open specified pattern file." << endl;
         return (-1);
     }
+
     // Read the patterns ...
     input_file_str >> (*pset);
+
     // Close the pattern set file ...
     if (input_file_str.is_open())
         input_file_str.close();
-    /* cout << (*pset); */ 
 
-    //clasify the training set... and I wonder
-    PatternSet* testingSet = new PatternSet(num_testing, input_dimensionality, output_dimensionality);
-    input_file_str.open(trim(testing_file).c_str());
-    if(!input_file_str.is_open()) {
-        cerr << argv[0] << " error: cannot open specified pattern file." << endl;
-        return (-1);
+    //create decision learning tree
+    //create a root node fot the tree
+    DTreeNode Root;
+    Root.pset = pset;
+    Root.example_indexes = new int[num_training];
+    Root.num_examples = num_training;
+    for(int i = 0; i < num_training; i++)
+        Root.example_indexes[i] = i;
+    attribute temp;
+    for(int i = 0; i < input_dimensionality; i++) {
+        temp.index = i;
+        temp.gain = 0;
+        Root.attributes.push_back(temp);
     }
-    //read the patterns
-    input_file_str >> (*testingSet);
-    //close the pattern set file
-    if(input_file_str.is_open())
-        input_file_str.close();
 
-    gsl_vector* input_vector = gsl_vector_alloc(input_dimensionality);
-    gsl_vector* output = gsl_vector_alloc(output_dimensionality);
-    gsl_vector* target_vector = gsl_vector_alloc(output_dimensionality);
-    gsl_vector* neighbor_i = gsl_vector_alloc(output_dimensionality);
-    pset->set_permute_flag();
-    ofstream output_file_str(trim(output_file).c_str());
-    double totalSSE = 0;
-    for(int i = 0; i < num_testing; i++) {
-        //input vector
-        if(!testingSet->input_pattern(i, input_vector)) {
-            cerr << argv[0] << " error: issue copying input vector\n";
-        }
+    //if all examples are positive return the single-node tree root with label =+
+    //if all examples are negative return the single-node tree root, with label =-
+    //if Attributes is empty terutn the single-node tree root with label = most common value of target_attribute in examples
 
-        //order the sets by distance metric
-        if(distance_metric[0] == 'E') {
-            //euclidean distance
-            pset->sort_euclidean(input_vector);
-        } else if(distance_metric[0] == 'A') {
-            //angular distance
-            pset->sort_angular(input_vector);
-        } else {
-            cerr << "wth\n";
-        }
+    ID3(&Root);
 
-        //choose the K-nearest neighbors
-        //create classification based on output method
-        gsl_vector_scale(output, 0.0);
-        double weight_sum = 0;
-        bool special_case = false;
-        int k_special = 0;
-        for(int j = 0; j < k; j++) {
-            pset->target_pattern(pset->get_permuted_i(j), neighbor_i);
-
-            //scale the vector if we're doing weighted mean
-            if(output_method[0] == 'W') {
-                double weight = pow(pset->get_distance(pset->get_permuted_i(j)), 2);
-                if(weight != 0 && !special_case) { //as soon as we hit a "special_case" never consider non 0 weighted vectors
-                    weight_sum += 1.0/weight;
-                    gsl_vector_scale(neighbor_i, 1.0/weight);
-                } else if(weight == 0) { 
-                    if(!special_case) {
-                        special_case = true;
-                        gsl_vector_scale(output, 0.0);
-                    }
-                    k_special++;
-                    gsl_vector_add(output, neighbor_i);
-                }
-            }
-            if(!special_case)
-                gsl_vector_add(output, neighbor_i);
-        }
-
-        //scale the output vector down by the number of vectors used (or sum of weight)
-        if(special_case) {
-            gsl_vector_scale(output, 1.0/k_special);
-        } else if(output_method[0] == 'U' || output_method[0] == 'M') {
-            gsl_vector_scale(output, 1.0/k);
-        } else if(output_method[0] == 'W') {
-            gsl_vector_scale(output, 1.0/weight_sum);
-        }
-
-        //calculate Sum Squared Error
-        double sse = 0;
-        testingSet->target_pattern(i, target_vector);
-        for(int j = 0; j < output_dimensionality; j++)
-            sse += pow(gsl_vector_get(output, j) - gsl_vector_get(target_vector, j), 2.0);
-        totalSSE += sse;
-
-        //Output to the file
-        for(int j = 0; j < input_dimensionality; j++)
-            output_file_str << gsl_vector_get(input_vector, j) << " ";
-        for(int j = 0; j < output_dimensionality; j++)
-            output_file_str << gsl_vector_get(output, j) << " ";
-        for(int j = 0; j < output_dimensionality; j++)
-            output_file_str << gsl_vector_get(target_vector, j) << " ";
-        output_file_str << sse << endl;
-    }
-    output_file_str << totalSSE << endl;
-    output_file_str.close();
-    /* // Read the target vector ... */
-    /* target_vector = gsl_vector_alloc(input_dimensionality); */
-    /* cout << "Enter the target vector, with elements separated by whitespace:" */
-    /*     << endl; */
-    /* gsl_vector_fscanf(stdin, target_vector); */
-    /* // Output the input vectors in a random order ... */
-    /* pset->set_permute_flag(); */
-    /* pset->permute_patterns(); */
-    /* cout << endl; */
-    /* cout << "Randomly permuted patterns:" << endl << (*pset); */
-    /* // Output the input vectors in their original order ... */
-    /* pset->clear_permute_flag(); */
-    /* cout << endl; */
-    /* cout << "Patterns in their original order:" << endl << (*pset); */
-    /* // Output the vectors in Euclidean distance order ... */
-    /* pset->set_permute_flag(); */
-    /* (void) pset->sort_euclidean(target_vector); */
-    /* cout << endl; */
-    /* cout << "Patterns in order of growing Euclidean distance from target vector:" */
-    /*     << endl << (*pset); */
-    /* // Output the vectors in angular distance order ... */
-    /* (void) pset->sort_angular(target_vector); */
-    /* cout << endl; */
-    /* cout << "Patterns in order of growing angular distance from target vector:" */
-    /*     << endl << (*pset); */
-    /* pset->clear_permute_flag(); */
-    /* // Compute the PCA projections ... */
-    /* PatternSet projected_pset = pset->pca_project(); */
-    /* projected_pset.clear_permute_flag(); */
-    /* cout << endl; */
-    /* cout << "PCA projected patterns in their original order:" << endl */
-    /*     << projected_pset; */
-    /* // Deallocate storage ... */
-    /* delete pset; */
-    /* gsl_vector_free(target_vector); */
-    /* // Done ... */
-    /* cout << endl << "Done." << endl; */
     return (0);
 }
 
+double slog(double num) {
+    if(num == 0)
+        return 0;
+    else
+        return log(num)/log(2);
+}
+
+double entropy(double numP, double numN) {
+    return (0 - (numP/(numP+numN) * slog(numP/(numP+numN))) - (numN/(numP+numN) * slog(numN/(numP+numN))));
+}
+
+void calc_gains(DTreeNode* node) {
+    list<attribute>::iterator it = node->attributes.begin();
+    while(it != node->attributes.end()) {
+        //calculate entropy of positive examples
+        double cap = 0;
+        double can = 0;
+        double cnap = 0;
+        double cnan = 0;
+        gsl_vector* curr = gsl_vector_alloc(17);//TODO access the correct size dynamicly
+        for(int i = 0; i < node->num_examples; i++) {
+            node->pset->full_pattern(node->example_indexes[i], curr);
+            //gsl_vector_get(curr, it->index) <- if it has this attribute or not
+            //gsl_vector_get(curr, 17) <- the output value of the vector TODO find this dynamically
+            if(gsl_vector_get(curr, it->index) >= 0.5) { //has the attribute
+                if(gsl_vector_get(curr, 16) >= 0.5) { //positive example
+                    cap++;
+                } else {
+                    can++;
+                }
+            } else {
+                if(gsl_vector_get(curr, 16) >= 0.5) {
+                    cnap++;
+                } else {
+                    cnan++;
+                }
+            }
+        }
+        it->gain = entropy(cap+cnap, can+cnan);
+        it->gain -= (cap+can)/node->num_examples*entropy(cap, can);
+        it->gain -= (cnap+cnan)/node->num_examples*entropy(cnap, cnan);
+        cout << "gain " << it->gain << " ";
+        cout << " that should be the values for attribute @ index " << it->index << endl;
+        it++;
+    }
+}
+
+attribute best_attribute(DTreeNode* node) {
+    attribute best = node->attributes.front();
+    list<attribute>::iterator it = node->attributes.begin();
+    while(it != node->attributes.end()) {
+        if(it->gain > best.gain)
+            best = *it;
+        it++;
+    }
+}
+
+void ID3(DTreeNode* node) {
+    calc_gains(node);
+    //pick the attribute A from attributes that best classifies example_indexes
+    //set the decision attribute for node to A
+    //for each possible value vi of A
+    //  add a new tree branch
+    //  let examples vi be the subset of examples that have value vi for A
+    //  if examples vi is empty
+    //      then below this new branch add a leaf node with label = most common value of Target_attribute in examples
+    //      else add a new subtree below this branch
+    //          ID3()
+}
