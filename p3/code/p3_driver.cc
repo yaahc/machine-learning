@@ -42,12 +42,17 @@ string& trim(string& s) {
 //
 
 int main(int argc, char** argv) {
-    int input_dimensionality;
-    int number_of_patterns;
     PatternSet* pset;
-    string pattern_file_name;
-    ifstream input_file_str;
     ifstream config_file_str;
+    ifstream input_file_str;
+    int input_dimensionality;
+    int num_training;
+    string training_file_name;
+    int num_testing;
+    string testing_file_name;
+    string output_file_name;
+
+    string pattern_file_name;
 
     // Check number of arguments ...
     if (argc != 2)
@@ -58,20 +63,13 @@ int main(int argc, char** argv) {
         cerr << argv[0] << " error: could not open config file." << endl;
         return(-1);
     }
-    int k, output_dimensionality, num_training, num_testing;
-    string distance_metric, output_method, training_file, testing_file, output_file;
-    config_file_str >> k;
     config_file_str >> input_dimensionality;
-    config_file_str >> output_dimensionality;
-    config_file_str >> distance_metric;
-    config_file_str >> output_method;
     config_file_str >> num_training;
-    config_file_str >> training_file;
+    config_file_str >> training_file_name;
     config_file_str >> num_testing;
-    config_file_str >> testing_file;
-    config_file_str >> output_file;
+    config_file_str >> testing_file_name;
+    config_file_str >> output_file_name;
 
-    cout << k << " " << input_dimensionality << " " << output_dimensionality << " " << distance_metric << " " << output_method << " " << num_training << " " << training_file << " " << num_testing << " " << testing_file << " " << output_file << endl;
     // Make pattern set ...
     pset = new PatternSet(num_training, input_dimensionality, output_dimensionality);
     // Open the pattern set file ...
