@@ -1,0 +1,7 @@
+I tried setting up my automake myself this time. As such you may notice that a
+bunch of the info documents like INSTALL and COPYING etc. are either blank or
+symlinks. I do not know the proper way to fill these out so I'm leaving them as
+is for now. I've done my commenting and credit giving inside of the p3_driver
+and my report.
+
+Should be a pretty standard ./configure ./make ./p3_driver [FILE] run

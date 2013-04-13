@@ -1,0 +1,33 @@
+
+This data set is borrowed from _Artificial Intelligence:  A Modern
+Approach_ by Stuart Russell and Peter Norvig.  In that textbook, it is
+used to illustrate decision tree learning using ID3.  The problem
+involves determining when Dr. Russell would wait for a table at a
+restaurant, given features of the restaurant on a given night.  In the
+originally presented problem, some features were non-binary, but these
+have been converted into binary features, here.  The target category
+is that of situations in which Dr. Russell would, indeed, wait for a
+table.
+
+The columns in the accompanying pattern files contain the
+following binary attributes:
+
+ 1.  there is a suitable alternative restaurant nearby
+ 2.  the restaurant has a bar to wait in
+ 3.  it is a friday or a saturday
+ 4.  the diners are hungry
+ 5.  the restaurant is empty
+ 6.  the restaurant is full
+ 7.  the restaurant is particularly inexpensive
+ 8.  the restaurant is particularly expensive
+ 9.  it is raining outside
+10.  a reservation was made at this restaurant
+11.  the restaurant serves French cuisine
+12.  the restaurant serves Italian cuisine
+13.  the restaurant serves Thai cuisine
+14.  the estimated wait time is 10-30 minutes
+15.  the estimated wait time is 30-60 minutes
+16.  the estimated wait time is more than 60 minutes
+17.  class -- Dr. Russell would wait for a table
+
+The goal is to predict the 17th attribute from the first sixteen.

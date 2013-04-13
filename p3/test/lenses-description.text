@@ -1,0 +1,21 @@
+
+This data set involves diagnosing the vision of patients in order to
+determine if they would benefit from being fitted with contact
+lenses.  Features of the patient are to be used to classify each into
+a target category (contact lenses are not advised) or a non-target
+category (contact lenses are acceptable).
+
+The columns in the accompanying pattern files contain the
+following binary attributes:
+
+ 1.  patient's age is "young"
+ 2.  patient's age is "pre-presbyopic"
+ 3.  patient's age is "presbyopic"
+ 4.  patient has myope spectacle prescription
+ 5.  patient has hypermetrope spectacle prescription
+ 6.  patient is astigmatic
+ 7.  patient has reduced tear production rate
+ 8.  class -- patient should not be fitted with contact lenses
+
+The goal is to predict the 8th attribute from the first seven.
+

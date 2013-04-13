@@ -1,0 +1,46 @@
+decision:3
+0 1 2 3 4 5 6 7 8 9 10 11 
+decision:5
+0 1 3 5 7 9 11 
+decision:0
+1 3 9 11 
+decision:2
+1 3 9 11 
+decision:6
+3 9 11 
+1
+0
+0
+TODO
+1
+decision:1
+2 4 6 8 10 
+decision:0
+2 6 8 
+TODO
+decision:8
+2 6 8 
+0
+1
+0
+4 false then6 12
+  2 false then1 5
+      FALSE
+  2 true then1 5
+    1 false then1 3
+      9 false then1 3
+          TRUE
+      9 true then1 3
+          FALSE
+4 true then6 12
+  6 false then5 7
+      TRUE
+  6 true then5 7
+    1 true then2 4
+      3 false then2 4
+          FALSE
+      3 true then2 4
+        7 false then2 3
+            FALSE
+        7 true then2 3
+            TRUE
